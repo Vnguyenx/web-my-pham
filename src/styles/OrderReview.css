@@ -1,0 +1,462 @@
+/* ==========================================
+   ORDER REVIEW CARD - RIGHT SIDEBAR
+========================================== */
+
+.order-review-card {
+    background: #FFFFFF;
+    border-radius: 12px;
+    padding: 24px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+    position: sticky;
+    top: 20px;
+    transition: all 0.3s ease;
+}
+
+.order-review-card:hover {
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+}
+
+/* ==========================================
+   HEADING
+========================================== */
+
+.order-review-card h3 {
+    font-size: 20px;
+    font-weight: 600;
+    color: #333333;
+    margin: 0 0 20px 0;
+    padding-bottom: 12px;
+    border-bottom: 2px solid #F5E1DA;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.order-review-card h3::before {
+    content: "🛒";
+    font-size: 24px;
+}
+
+/* ==========================================
+   ORDER ITEMS LIST (MINI VERSION)
+========================================== */
+
+.order-items-mini {
+    max-height: 400px;
+    overflow-y: auto;
+    margin-bottom: 20px;
+    padding-right: 8px;
+}
+
+/* Custom scrollbar */
+.order-items-mini::-webkit-scrollbar {
+    width: 6px;
+}
+
+.order-items-mini::-webkit-scrollbar-track {
+    background: #F5E1DA;
+    border-radius: 10px;
+}
+
+.order-items-mini::-webkit-scrollbar-thumb {
+    background: #E67E22;
+    border-radius: 10px;
+}
+
+.order-items-mini::-webkit-scrollbar-thumb:hover {
+    background: #D4691A;
+}
+
+/* ==========================================
+   ITEM ROW
+========================================== */
+
+.item-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 0;
+    border-bottom: 1px solid #F5E1DA;
+}
+
+.item-row:last-child {
+    border-bottom: none;
+}
+
+/* Item info section (left side) */
+.item-info {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+    flex: 1;
+    min-width: 0;
+}
+
+.item-info img {
+    width: 60px;
+    height: 60px;
+    border-radius: 8px;
+    object-fit: cover;
+    flex-shrink: 0;
+    border: 1px solid #F5E1DA;
+}
+
+.item-info > div {
+    flex: 1;
+    min-width: 0;
+}
+
+.item-info .name {
+    font-size: 14px;
+    font-weight: 500;
+    color: #333333;
+    margin: 0 0 4px 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.item-info .qty {
+    font-size: 13px;
+    color: #666;
+}
+
+/* Item price (right side) */
+.item-row .price {
+    font-size: 15px;
+    font-weight: 600;
+    color: #E67E22;
+    flex-shrink: 0;
+    margin-left: 12px;
+}
+
+/* ==========================================
+   DIVIDER
+========================================== */
+
+.order-review-card hr {
+    border: none;
+    border-top: 2px solid #F5E1DA;
+    margin: 20px 0;
+}
+
+/* ==========================================
+   SUMMARY DETAILS
+========================================== */
+
+.summary-details {
+    margin-bottom: 16px;
+}
+
+.summary-details .line {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 12px;
+    font-size: 14px;
+    color: #333333;
+}
+
+.summary-details .line span:first-child {
+    color: #666;
+}
+
+.summary-details .line span:last-child {
+    font-weight: 600;
+    color: #333333;
+}
+
+/* Discount line */
+.summary-details .line.discount span:last-child {
+    color: #52c41a;
+}
+
+/* ==========================================
+   TOTAL LINE
+========================================== */
+
+.total-line {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 16px 0;
+    border-top: 2px solid #F5E1DA;
+    border-bottom: 2px solid #F5E1DA;
+    margin-bottom: 20px;
+}
+
+.total-line > span:first-child {
+    font-size: 16px;
+    font-weight: 600;
+    color: #333333;
+}
+
+.final-total {
+    font-size: 22px;
+    font-weight: 700;
+    color: #A93226;
+    letter-spacing: -0.5px;
+}
+
+/* ==========================================
+   SUBMIT ORDER BUTTON
+========================================== */
+
+.btn-submit-order {
+    width: 100%;
+    padding: 16px;
+    background: linear-gradient(135deg, #A93226 0%, #C44536 100%);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 12px rgba(169, 50, 38, 0.3);
+    text-transform: uppercase;
+}
+
+.btn-submit-order:hover {
+    background: linear-gradient(135deg, #8B2A20 0%, #A93226 100%);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(169, 50, 38, 0.4);
+}
+
+.btn-submit-order:active {
+    transform: translateY(0);
+    box-shadow: 0 4px 12px rgba(169, 50, 38, 0.3);
+}
+
+.btn-submit-order:disabled {
+    background: #ccc;
+    cursor: not-allowed;
+    box-shadow: none;
+    transform: none;
+}
+
+.btn-submit-order:disabled:hover {
+    transform: none;
+}
+
+/* ==========================================
+   SECURITY NOTE
+========================================== */
+
+.security-note {
+    text-align: center;
+    font-size: 12px;
+    color: #666;
+    margin: 16px 0 0 0;
+    padding-top: 16px;
+    border-top: 1px solid #F5E1DA;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+}
+
+.security-note::before {
+    content: "";
+    width: 40px;
+    height: 1px;
+    background: linear-gradient(to right, transparent, #F5E1DA);
+}
+
+.security-note::after {
+    content: "";
+    width: 40px;
+    height: 1px;
+    background: linear-gradient(to left, transparent, #F5E1DA);
+}
+
+/* ==========================================
+   EMPTY STATE
+========================================== */
+
+.order-items-mini:empty::before {
+    content: "Giỏ hàng trống";
+    display: block;
+    text-align: center;
+    padding: 40px 20px;
+    color: #999;
+    font-size: 14px;
+}
+
+/* ==========================================
+   LOADING STATE (OPTIONAL)
+========================================== */
+
+.order-review-card.loading {
+    opacity: 0.6;
+    pointer-events: none;
+}
+
+.order-review-card.loading .btn-submit-order::after {
+    content: "";
+    width: 16px;
+    height: 16px;
+    border: 2px solid #FFFFFF;
+    border-top-color: transparent;
+    border-radius: 50%;
+    animation: spin 0.8s linear infinite;
+    display: inline-block;
+    margin-left: 8px;
+    vertical-align: middle;
+}
+
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* ==========================================
+   RESPONSIVE DESIGN
+========================================== */
+
+@media (max-width: 1024px) {
+    .order-review-card {
+        position: static;
+        margin-top: 20px;
+    }
+}
+
+@media (max-width: 768px) {
+    .order-review-card {
+        padding: 20px 16px;
+    }
+
+    .order-review-card h3 {
+        font-size: 18px;
+    }
+
+    .order-items-mini {
+        max-height: 300px;
+    }
+
+    .item-info img {
+        width: 50px;
+        height: 50px;
+    }
+
+    .item-info .name {
+        font-size: 13px;
+    }
+
+    .item-info .qty {
+        font-size: 12px;
+    }
+
+    .item-row .price {
+        font-size: 14px;
+    }
+
+    .summary-details .line {
+        font-size: 13px;
+    }
+
+    .total-line > span:first-child {
+        font-size: 15px;
+    }
+
+    .final-total {
+        font-size: 20px;
+    }
+
+    .btn-submit-order {
+        padding: 14px;
+        font-size: 15px;
+    }
+
+    .security-note {
+        font-size: 11px;
+        gap: 8px;
+    }
+
+    .security-note::before,
+    .security-note::after {
+        width: 30px;
+    }
+}
+
+@media (max-width: 480px) {
+    .order-review-card {
+        padding: 16px 12px;
+    }
+
+    .item-info {
+        gap: 8px;
+    }
+
+    .item-info img {
+        width: 45px;
+        height: 45px;
+    }
+
+    .item-info .name {
+        font-size: 12px;
+    }
+
+    .btn-submit-order {
+        padding: 12px;
+        font-size: 14px;
+    }
+}
+
+/* ==========================================
+   ANIMATION
+========================================== */
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.order-review-card {
+    animation: fadeIn 0.4s ease;
+}
+
+/* Subtle pulse animation for total price */
+@keyframes pricePulse {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.05);
+    }
+}
+
+.final-total {
+    animation: pricePulse 2s ease-in-out infinite;
+}
+
+/* ==========================================
+   HOVER EFFECTS
+========================================== */
+
+.item-row {
+    transition: background 0.2s ease;
+}
+
+.item-row:hover {
+    background: #FFFBF7;
+}
+
+.summary-details .line {
+    transition: all 0.2s ease;
+}
+
+.summary-details .line:hover {
+    color: #E67E22;
+}

@@ -1,0 +1,335 @@
+/* ==========================================
+   CHECKOUT FORM - DELIVERY INFORMATION
+========================================== */
+
+.checkout-form {
+    background: #FFFFFF;
+    border-radius: 12px;
+    padding: 24px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+    transition: all 0.3s ease;
+}
+
+.checkout-form:hover {
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+}
+
+/* ==========================================
+   HEADING
+========================================== */
+
+.checkout-form h3 {
+    font-size: 20px;
+    font-weight: 600;
+    color: #333333;
+    margin: 0 0 20px 0;
+    padding-bottom: 12px;
+    border-bottom: 2px solid #F5E1DA;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.checkout-form h3::before {
+    content: "📍";
+    font-size: 24px;
+}
+
+/* ==========================================
+   FORM ROW (2 COLUMNS)
+========================================== */
+
+.form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    margin-bottom: 20px;
+}
+
+/* ==========================================
+   FORM INPUTS
+========================================== */
+
+.checkout-form input,
+.checkout-form select,
+.checkout-form textarea {
+    width: 90%;
+    padding: 12px 16px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 14px;
+    color: #333333;
+    background: #FFFFFF;
+    transition: all 0.3s ease;
+    font-family: inherit;
+}
+
+.checkout-form input::placeholder,
+.checkout-form select::placeholder,
+.checkout-form textarea::placeholder {
+    color: #999;
+}
+
+/* Focus state */
+.checkout-form input:focus,
+.checkout-form select:focus,
+.checkout-form textarea:focus {
+    outline: none;
+    border-color: #E67E22;
+    box-shadow: 0 0 0 3px rgba(230, 126, 34, 0.1);
+    background: #FFFBF7;
+}
+
+/* Disabled state */
+.checkout-form input:disabled,
+.checkout-form select:disabled,
+.checkout-form textarea:disabled {
+    background: #f5f5f5;
+    cursor: not-allowed;
+    opacity: 0.6;
+}
+
+/* ==========================================
+   LOCATION SELECTORS (3 DROPDOWNS)
+========================================== */
+
+.location-selectors {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+    margin-bottom: 20px;
+
+}
+
+.location-selectors select {
+    width: 97%;
+    padding: 12px 16px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 14px;
+    color: #333333;
+    background: #FFFFFF;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%23333333' d='M6 9L1 4h10z'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 12px center;
+    padding-right: 40px;
+}
+
+.location-selectors select:hover:not(:disabled) {
+    border-color: #E67E22;
+}
+
+.location-selectors select:focus {
+    outline: none;
+    border-color: #E67E22;
+    box-shadow: 0 0 0 3px rgba(230, 126, 34, 0.1);
+}
+
+.location-selectors select:disabled {
+    background-color: #f5f5f5;
+    cursor: not-allowed;
+    opacity: 0.6;
+}
+
+/* ==========================================
+   FORM GROUP (SINGLE INPUT)
+========================================== */
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    font-size: 14px;
+    font-weight: 500;
+    color: #333333;
+    margin-bottom: 8px;
+}
+
+.form-group label span {
+    color: #A93226;
+    margin-left: 2px;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 12px 16px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 14px;
+    transition: all 0.3s ease;
+}
+
+.form-group textarea {
+    resize: vertical;
+    min-height: 80px;
+}
+
+/* ==========================================
+   ADDRESS PREVIEW
+========================================== */
+
+.address-preview {
+    background: linear-gradient(135deg, #F5E1DA 0%, #FDEEE6 100%);
+    border-left: 4px solid #E67E22;
+    padding: 12px 16px;
+    border-radius: 8px;
+    font-size: 14px;
+    color: #333333;
+    margin: 20px 0 0 0;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.address-preview::before {
+    content: "📦";
+    font-size: 20px;
+}
+
+/* Empty state */
+.address-preview:empty::before {
+    content: "📦 Vui lòng chọn địa chỉ giao hàng";
+    color: #999;
+    font-weight: normal;
+}
+
+/* ==========================================
+   VALIDATION STYLES
+========================================== */
+
+.checkout-form input:invalid:not(:placeholder-shown),
+.checkout-form select:invalid:not(:placeholder-shown) {
+    border-color: #A93226;
+}
+
+.checkout-form input:valid:not(:placeholder-shown),
+.checkout-form select:valid:not(:placeholder-shown) {
+    border-color: #52c41a;
+}
+
+/* Required indicator */
+.checkout-form input[required],
+.checkout-form select[required] {
+    position: relative;
+}
+
+/* ==========================================
+   RESPONSIVE DESIGN
+========================================== */
+
+@media (max-width: 768px) {
+    .checkout-form {
+        padding: 20px 16px;
+    }
+
+    .checkout-form h3 {
+        font-size: 18px;
+    }
+
+    .form-row {
+        grid-template-columns: 1fr;
+        gap: 12px;
+    }
+
+    .location-selectors {
+        grid-template-columns: 1fr;
+        gap: 12px;
+    }
+
+    .checkout-form input,
+    .checkout-form select,
+    .checkout-form textarea {
+        padding: 10px 14px;
+        font-size: 14px;
+    }
+
+    .location-selectors select {
+        padding-right: 36px;
+        background-position: right 10px center;
+    }
+
+    .address-preview {
+        font-size: 13px;
+        padding: 10px 14px;
+    }
+}
+
+@media (max-width: 480px) {
+    .checkout-form {
+        padding: 16px 12px;
+    }
+
+    .checkout-form h3 {
+        font-size: 16px;
+    }
+
+    .form-row,
+    .location-selectors {
+        gap: 10px;
+    }
+
+    .checkout-form input,
+    .checkout-form select,
+    .checkout-form textarea {
+        padding: 8px 12px;
+        font-size: 13px;
+    }
+}
+
+/* ==========================================
+   ANIMATION
+========================================== */
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.checkout-form {
+    animation: fadeIn 0.4s ease;
+}
+
+/* ==========================================
+   LOADING STATE (OPTIONAL)
+========================================== */
+
+.checkout-form.loading {
+    opacity: 0.6;
+    pointer-events: none;
+}
+
+.checkout-form.loading::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 40px;
+    height: 40px;
+    border: 3px solid #F5E1DA;
+    border-top-color: #E67E22;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    from {
+        transform: translate(-50%, -50%) rotate(0deg);
+    }
+    to {
+        transform: translate(-50%, -50%) rotate(360deg);
+    }
+}

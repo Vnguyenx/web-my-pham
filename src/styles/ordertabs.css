@@ -1,0 +1,331 @@
+/* ===== ORDER TABS CONTAINER ===== */
+.order-tabs {
+    display: flex;
+    gap: 12px;
+    padding: 8px;
+    background: #FFFFFF;
+    border-radius: 16px;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+    overflow-x: auto;
+    scrollbar-width: thin;
+    scrollbar-color: #E67E22 #f0f0f0;
+    margin-bottom: 24px;
+}
+
+/* Custom scrollbar for webkit browsers */
+.order-tabs::-webkit-scrollbar {
+    height: 6px;
+}
+
+.order-tabs::-webkit-scrollbar-track {
+    background: #f0f0f0;
+    border-radius: 3px;
+}
+
+.order-tabs::-webkit-scrollbar-thumb {
+    background: #E67E22;
+    border-radius: 3px;
+}
+
+.order-tabs::-webkit-scrollbar-thumb:hover {
+    background: #d67118;
+}
+
+/* ===== TAB BUTTONS ===== */
+.order-tabs button {
+    position: relative;
+    padding: 12px 24px;
+    border: 2px solid transparent;
+    background: transparent;
+    color: #666666;
+    font-size: 15px;
+    font-weight: 600;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    white-space: nowrap;
+    overflow: hidden;
+    font-family: inherit;
+}
+
+/* Hover effect */
+.order-tabs button::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, rgba(245, 225, 218, 0.5), rgba(255, 255, 255, 0.3));
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    border-radius: 10px;
+    z-index: 0;
+}
+
+.order-tabs button:hover::before {
+    opacity: 1;
+}
+
+.order-tabs button:hover {
+    color: #E67E22;
+    transform: translateY(-2px);
+    border-color: rgba(230, 126, 34, 0.2);
+}
+
+.order-tabs button span {
+    position: relative;
+    z-index: 1;
+}
+
+/* ===== ACTIVE STATE ===== */
+.order-tabs button.active {
+    background: linear-gradient(135deg, #E67E22, #d67118);
+    color: #FFFFFF;
+    border-color: #E67E22;
+    box-shadow: 0 4px 12px rgba(230, 126, 34, 0.3);
+    transform: translateY(-2px);
+}
+
+.order-tabs button.active::before {
+    opacity: 0;
+}
+
+/* ===== ANIMATIONS ===== */
+@keyframes slideIn {
+    from {
+        width: 0;
+        opacity: 0;
+    }
+    to {
+        width: 80%;
+        opacity: 1;
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.order-tabs button {
+    animation: fadeIn 0.4s ease-out backwards;
+}
+
+.order-tabs button:nth-child(1) { animation-delay: 0.05s; }
+.order-tabs button:nth-child(2) { animation-delay: 0.1s; }
+.order-tabs button:nth-child(3) { animation-delay: 0.15s; }
+.order-tabs button:nth-child(4) { animation-delay: 0.2s; }
+.order-tabs button:nth-child(5) { animation-delay: 0.25s; }
+.order-tabs button:nth-child(6) { animation-delay: 0.3s; }
+
+/* ===== RIPPLE EFFECT ===== */
+.order-tabs button {
+    overflow: hidden;
+}
+
+.order-tabs button::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.5);
+    transform: translate(-50%, -50%);
+    transition: width 0.6s, height 0.6s;
+}
+
+.order-tabs button:active::after {
+    width: 200px;
+    height: 200px;
+}
+
+/* ===== STATUS INDICATORS (Optional) ===== */
+.order-tabs button[data-status="pending"]::before {
+    background: linear-gradient(135deg, rgba(255, 193, 7, 0.2), transparent);
+}
+
+.order-tabs button[data-status="confirmed"]::before {
+    background: linear-gradient(135deg, rgba(23, 162, 184, 0.2), transparent);
+}
+
+.order-tabs button[data-status="shipping"]::before {
+    background: linear-gradient(135deg, rgba(0, 123, 255, 0.2), transparent);
+}
+
+.order-tabs button[data-status="delivered"]::before {
+    background: linear-gradient(135deg, rgba(40, 167, 69, 0.2), transparent);
+}
+
+.order-tabs button[data-status="cancelled"]::before {
+    background: linear-gradient(135deg, rgba(220, 53, 69, 0.2), transparent);
+}
+
+/* ===== RESPONSIVE: TABLET ===== */
+@media (max-width: 968px) {
+    .order-tabs {
+        gap: 10px;
+        padding: 6px;
+        margin-bottom: 20px;
+    }
+
+    .order-tabs button {
+        padding: 10px 20px;
+        font-size: 14px;
+    }
+}
+
+/* ===== RESPONSIVE: MOBILE ===== */
+@media (max-width: 640px) {
+    .order-tabs {
+        gap: 8px;
+        padding: 6px;
+        border-radius: 12px;
+        margin-bottom: 16px;
+    }
+
+    .order-tabs button {
+        padding: 10px 16px;
+        font-size: 13px;
+        border-radius: 10px;
+    }
+
+    .order-tabs button.active {
+        transform: translateY(-1px);
+    }
+
+    .order-tabs button:hover {
+        transform: translateY(-1px);
+    }
+}
+
+/* ===== ACCESSIBILITY ===== */
+.order-tabs button:focus-visible {
+    outline: 2px solid #E67E22;
+    outline-offset: 2px;
+}
+
+.order-tabs button:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    pointer-events: none;
+}
+
+/* ===== BADGE/COUNTER (Optional - for order counts) ===== */
+.order-tabs button .badge {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 20px;
+    height: 20px;
+    padding: 0 6px;
+    margin-left: 8px;
+    background: rgba(230, 126, 34, 0.2);
+    color: #E67E22;
+    font-size: 11px;
+    font-weight: 700;
+    border-radius: 10px;
+    transition: all 0.3s ease;
+}
+
+.order-tabs button.active .badge {
+    background: rgba(255, 255, 255, 0.3);
+    color: #FFFFFF;
+}
+
+.order-tabs button:hover .badge {
+    transform: scale(1.1);
+}
+
+/* ===== LOADING STATE ===== */
+.order-tabs.loading {
+    opacity: 0.6;
+    pointer-events: none;
+}
+
+.order-tabs.loading::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 24px;
+    height: 24px;
+    border: 3px solid #f0f0f0;
+    border-top-color: #E67E22;
+    border-radius: 50%;
+    animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+    to {
+        transform: translate(-50%, -50%) rotate(360deg);
+    }
+}
+
+/* ===== PRINT STYLES ===== */
+@media print {
+    .order-tabs {
+        display: none;
+    }
+}
+
+/* ===== REDUCE MOTION ===== */
+@media (prefers-reduced-motion: reduce) {
+    .order-tabs button,
+    .order-tabs button::before,
+    .order-tabs button::after {
+        animation: none;
+        transition: none;
+    }
+}
+
+/* ===== ALTERNATIVE STYLE: PILLS ===== */
+/* Uncomment to use pill-style tabs */
+
+.order-tabs {
+    background: #f8f9fa;
+    padding: 4px;
+}
+
+.order-tabs button {
+    border-radius: 20px;
+}
+
+.order-tabs button.active {
+    border-radius: 20px;
+}
+
+
+/* ===== ALTERNATIVE STYLE: UNDERLINE ===== */
+/* Uncomment to use underline-style tabs */
+/*
+.order-tabs {
+    background: transparent;
+    box-shadow: none;
+    border-bottom: 2px solid #e0e0e0;
+    padding: 0;
+    gap: 0;
+}
+
+.order-tabs button {
+    border-radius: 0;
+    border-bottom: 3px solid transparent;
+    padding: 12px 24px;
+}
+
+.order-tabs button.active {
+    background: transparent;
+    color: #E67E22;
+    border-bottom-color: #E67E22;
+    box-shadow: none;
+}
+*/

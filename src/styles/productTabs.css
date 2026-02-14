@@ -1,0 +1,347 @@
+/* productTabs.css */
+
+.product-tabs {
+    margin: 40px 0;
+    background-color: #FFFFFF;
+    border-radius: 12px;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+    overflow: hidden;
+}
+
+/* Tab Headers */
+.tab-headers {
+    display: flex;
+    border-bottom: 3px solid #F5E1DA;
+    background-color: #FAFAFA;
+}
+
+.tab-headers button {
+    flex: 1;
+    padding: 18px 24px;
+    border: none;
+    background-color: transparent;
+    color: #666;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.tab-headers button:hover {
+    color: #E67E22;
+    background-color: #F5E1DA;
+}
+
+.tab-headers button.active {
+    color: #A93226;
+    background-color: #FFFFFF;
+}
+
+.tab-headers button.active::after {
+    content: '';
+    position: absolute;
+    bottom: -3px;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, #E67E22, #A93226);
+}
+
+/* Tab Content */
+.tab-content {
+    padding: 30px;
+    min-height: 300px;
+    background-color: #FFFFFF;
+}
+
+.content-inner {
+    animation: fadeInContent 0.4s ease;
+    color: #333333;
+    line-height: 1.8;
+}
+
+@keyframes fadeInContent {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Usage Tab - Ordered List */
+.usage-tab ol {
+    margin: 0;
+    padding-left: 30px;
+    counter-reset: step-counter;
+    list-style: none;
+}
+
+.usage-tab ol li {
+    margin: 20px 0;
+    padding-left: 20px;
+    font-size: 15px;
+    color: #333333;
+    line-height: 1.8;
+    position: relative;
+    counter-increment: step-counter;
+}
+
+.usage-tab ol li::before {
+    content: counter(step-counter);
+    position: absolute;
+    left: -30px;
+    top: 0;
+    width: 28px;
+    height: 28px;
+    background: linear-gradient(135deg, #E67E22, #A93226);
+    color: #FFFFFF;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 14px;
+}
+
+/* Specs Tab - Table */
+.specs-tab {
+    padding: 10px 0;
+}
+
+.specs-table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.specs-table tbody tr {
+    transition: background-color 0.3s ease;
+}
+
+.specs-table tbody tr:nth-child(odd) {
+    background-color: #FAFAFA;
+}
+
+.specs-table tbody tr:nth-child(even) {
+    background-color: #FFFFFF;
+}
+
+.specs-table tbody tr:hover {
+    background-color: #F5E1DA;
+}
+
+.specs-table td {
+    padding: 18px 24px;
+    font-size: 15px;
+    border-bottom: 1px solid #F5E1DA;
+}
+
+.specs-table tbody tr:last-child td {
+    border-bottom: none;
+}
+
+.specs-table td:first-child {
+    font-weight: 600;
+    color: #333333;
+    width: 35%;
+    background: linear-gradient(90deg, rgba(245, 225, 218, 0.3), transparent);
+}
+
+.specs-table td:last-child {
+    color: #666;
+    width: 65%;
+}
+
+/* Reviews Tab */
+.reviews-tab {
+    padding: 0;
+    min-height: auto;
+}
+
+/* Remove default padding/margin for ProductReviews component */
+.reviews-tab > * {
+    margin: 0;
+}
+
+/* Responsive Design */
+
+/* Tablet */
+@media (max-width: 768px) {
+    .product-tabs {
+        margin: 30px 0;
+    }
+
+    .tab-headers button {
+        padding: 15px 20px;
+        font-size: 14px;
+        letter-spacing: 0.3px;
+    }
+
+    .tab-content {
+        padding: 25px 20px;
+        min-height: 250px;
+    }
+
+    .usage-tab ol {
+        padding-left: 25px;
+    }
+
+    .usage-tab ol li {
+        font-size: 14px;
+        margin: 16px 0;
+    }
+
+    .usage-tab ol li::before {
+        width: 26px;
+        height: 26px;
+        font-size: 13px;
+        left: -25px;
+    }
+
+    .specs-table td {
+        padding: 14px 18px;
+        font-size: 14px;
+    }
+
+    .specs-table td:first-child {
+        width: 40%;
+    }
+
+    .specs-table td:last-child {
+        width: 60%;
+    }
+}
+
+/* Mobile */
+@media (max-width: 480px) {
+    .product-tabs {
+        margin: 20px 0;
+        border-radius: 8px;
+    }
+
+    .tab-headers {
+        flex-direction: column;
+    }
+
+    .tab-headers button {
+        flex: 1 1 100%;
+        padding: 14px 16px;
+        font-size: 13px;
+        border-bottom: 1px solid #F5E1DA;
+        text-align: left;
+    }
+
+    .tab-headers button:last-child {
+        border-bottom: none;
+    }
+
+    .tab-headers button.active::after {
+        display: none;
+    }
+
+    .tab-headers button.active {
+        background: linear-gradient(90deg, #F5E1DA, #FFEEE8);
+    }
+
+    .tab-content {
+        padding: 20px 15px;
+        min-height: 200px;
+    }
+
+    .usage-tab ol {
+        padding-left: 20px;
+    }
+
+    .usage-tab ol li {
+        font-size: 14px;
+        margin: 14px 0;
+        padding-left: 15px;
+    }
+
+    .usage-tab ol li::before {
+        width: 24px;
+        height: 24px;
+        font-size: 12px;
+        left: -20px;
+    }
+
+    .specs-table {
+        border-radius: 6px;
+    }
+
+    .specs-table td {
+        padding: 12px 14px;
+        font-size: 13px;
+        display: block;
+        width: 100% !important;
+    }
+
+    .specs-table td:first-child {
+        background: linear-gradient(90deg, #F5E1DA, #FFEEE8);
+        border-bottom: none;
+        padding-bottom: 8px;
+        font-weight: 700;
+    }
+
+    .specs-table td:last-child {
+        padding-top: 8px;
+    }
+
+    .specs-table tbody tr {
+        display: block;
+        margin-bottom: 12px;
+        border-radius: 6px;
+        overflow: hidden;
+        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.06);
+    }
+
+    .reviews-tab {
+        padding: 0;
+    }
+}
+
+/* Accessibility */
+.tab-headers button:focus {
+    outline: 2px solid #E67E22;
+    outline-offset: -2px;
+}
+
+.tab-headers button:focus:not(:focus-visible) {
+    outline: none;
+}
+
+/* Smooth Transitions */
+.tab-headers button,
+.content-inner,
+.specs-table tbody tr {
+    transition: all 0.3s ease;
+}
+
+/* Print Styles */
+@media print {
+    .tab-headers {
+        display: none;
+    }
+
+    .tab-content {
+        box-shadow: none;
+        border: 1px solid #ddd;
+    }
+
+    .specs-table {
+        box-shadow: none;
+    }
+
+    .reviews-tab {
+        page-break-inside: avoid;
+    }
+}

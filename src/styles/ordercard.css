@@ -1,0 +1,489 @@
+/* ===== ORDER CARD CONTAINER ===== */
+.order-card {
+    background: #FFFFFF;
+    border-radius: 16px;
+    padding: 20px;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    border: 2px solid transparent;
+    animation: fadeInUp 0.4s ease-out;
+    position: relative;
+}
+
+.order-card:hover {
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+    transform: translateY(-4px);
+    border-color: rgba(230, 126, 34, 0.2);
+}
+
+/* ===== ORDER HEADER ===== */
+.order-card .order-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 16px;
+    margin-bottom: 16px;
+    border-bottom: 2px solid #f0f0f0;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+
+.order-card .order-header strong {
+    color: #E67E22;
+    font-weight: 700;
+    font-size: 18px;
+}
+
+.order-card .order-header .order-date {
+    flex: 1;
+    font-size: 14px;
+    color: #999999;
+    margin: 0;
+    font-weight: 500;
+}
+
+.order-card .order-header .order-date::before {
+    content: '📅';
+    margin-right: 6px;
+}
+
+/* ===== STATUS BADGES ===== */
+.order-card .status {
+    padding: 6px 16px;
+    border-radius: 20px;
+    font-size: 13px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+/* Status colors */
+.order-card .status.pending {
+    background: linear-gradient(135deg, #fff3cd, #ffe69c);
+    color: #856404;
+    border: 1px solid #ffeaa7;
+}
+
+.order-card .status.confirmed {
+    background: linear-gradient(135deg, #d1ecf1, #bee5eb);
+    color: #0c5460;
+    border: 1px solid #b8daff;
+}
+
+.order-card .status.shipping {
+    background: linear-gradient(135deg, #cce5ff, #b8daff);
+    color: #004085;
+    border: 1px solid #a3cfff;
+}
+
+.order-card .status.delivered {
+    background: linear-gradient(135deg, #d4edda, #c3e6cb);
+    color: #155724;
+    border: 1px solid #b1dfbb;
+}
+
+.order-card .status.cancelled {
+    background: linear-gradient(135deg, #f8d7da, #f5c6cb);
+    color: #721c24;
+    border: 1px solid #f1b0b7;
+}
+
+/* ===== ORDER ITEMS ===== */
+.order-card .order-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 0;
+    gap: 16px;
+    transition: all 0.2s ease;
+}
+
+.order-card .order-item:not(:last-of-type) {
+    border-bottom: 1px dashed #e0e0e0;
+}
+
+.order-card .order-item:hover {
+    background: rgba(245, 225, 218, 0.2);
+    padding-left: 12px;
+    padding-right: 12px;
+    border-radius: 8px;
+    margin: 0 -12px;
+}
+
+/* Order Item Content (Image + Info) */
+.order-card .order-item-content {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    flex: 1;
+    min-width: 0; /* Cho phép text truncate */
+}
+
+/* Product Image */
+.order-card .order-item-img {
+    width: 60px;
+    height: 60px;
+    object-fit: cover;
+    border-radius: 8px;
+    border: 2px solid #f0f0f0;
+    transition: all 0.3s ease;
+    flex-shrink: 0;
+}
+
+.order-card .order-item:hover .order-item-img {
+    border-color: #E67E22;
+    transform: scale(1.05);
+}
+
+/* Product Info */
+.order-card .order-item-info {
+    flex: 1;
+    min-width: 0;
+}
+
+.order-card .order-item-info strong {
+    display: block;
+    font-size: 15px;
+    font-weight: 600;
+    color: #333333;
+    margin-bottom: 4px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.order-card .order-item-info p {
+    font-size: 13px;
+    color: #999999;
+    margin: 0;
+}
+
+/* Product Price */
+.order-card .order-item-price {
+    font-size: 15px;
+    font-weight: 700;
+    color: #E67E22;
+    white-space: nowrap;
+    flex-shrink: 0;
+}
+
+/* ===== ORDER FOOTER ===== */
+.order-card .order-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 16px;
+    margin-top: 16px;
+    border-top: 2px solid #f0f0f0;
+    gap: 16px;
+}
+
+.order-card .order-footer strong {
+    font-size: 17px;
+    font-weight: 700;
+    color: #333333;
+}
+
+/* Detail Button */
+.order-card .detail-btn {
+    background: linear-gradient(135deg, #E67E22, #d67118);
+    color: #FFFFFF;
+    padding: 10px 24px;
+    border: none;
+    border-radius: 10px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 0 4px 12px rgba(230, 126, 34, 0.3);
+    position: relative;
+    overflow: hidden;
+}
+
+.order-card .detail-btn::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.3);
+    transform: translate(-50%, -50%);
+    transition: width 0.5s, height 0.5s;
+}
+
+.order-card .detail-btn:hover::before {
+    width: 300px;
+    height: 300px;
+}
+
+.order-card .detail-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(230, 126, 34, 0.4);
+}
+
+.order-card .detail-btn:active {
+    transform: translateY(0);
+}
+
+.order-card .detail-btn::after {
+    content: '→';
+    margin-left: 6px;
+    display: inline-block;
+    transition: transform 0.3s ease;
+}
+
+.order-card .detail-btn:hover::after {
+    transform: translateX(4px);
+}
+
+/* ===== ANIMATIONS ===== */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ===== LOADING STATE ===== */
+.order-card.loading {
+    opacity: 0.6;
+    pointer-events: none;
+    position: relative;
+}
+
+.order-card.loading::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 32px;
+    height: 32px;
+    border: 3px solid #f0f0f0;
+    border-top-color: #E67E22;
+    border-radius: 50%;
+    animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+    to {
+        transform: translate(-50%, -50%) rotate(360deg);
+    }
+}
+
+/* ===== RESPONSIVE: TABLET ===== */
+@media (max-width: 968px) {
+    .order-card {
+        padding: 16px;
+        border-radius: 14px;
+    }
+
+    .order-card .order-header {
+        gap: 8px;
+    }
+
+    .order-card .order-header strong {
+        font-size: 16px;
+    }
+
+    .order-card .order-header .order-date {
+        flex: 1 1 100%;
+        order: 1;
+    }
+
+    .order-card .status {
+        order: 2;
+    }
+
+    .order-card .order-item-img {
+        width: 50px;
+        height: 50px;
+    }
+
+    .order-card .order-footer {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 12px;
+    }
+
+    .order-card .detail-btn {
+        width: 100%;
+        text-align: center;
+    }
+}
+
+/* ===== RESPONSIVE: MOBILE ===== */
+@media (max-width: 640px) {
+    .order-card {
+        padding: 16px;
+        border-radius: 12px;
+    }
+
+    .order-card .order-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 8px;
+    }
+
+    .order-card .order-header strong {
+        font-size: 16px;
+    }
+
+    .order-card .order-header .order-date {
+        font-size: 13px;
+        width: 100%;
+    }
+
+    .order-card .status {
+        align-self: flex-start;
+    }
+
+    .order-card .order-item-content {
+        gap: 10px;
+    }
+
+    .order-card .order-item-img {
+        width: 50px;
+        height: 50px;
+    }
+
+    .order-card .order-item-info strong {
+        font-size: 14px;
+    }
+
+    .order-card .order-item-info p {
+        font-size: 12px;
+    }
+
+    .order-card .order-item-price {
+        font-size: 14px;
+    }
+
+    .order-card .order-footer strong {
+        font-size: 16px;
+    }
+
+    .order-card .detail-btn {
+        padding: 12px 20px;
+        font-size: 14px;
+    }
+}
+
+/* ===== ORDER LIST CONTAINER ===== */
+.order-list {
+    display: grid;
+    gap: 16px;
+    animation: fadeIn 0.5s ease-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* Staggered animation for multiple cards */
+.order-list .order-card:nth-child(1) { animation-delay: 0.05s; }
+.order-list .order-card:nth-child(2) { animation-delay: 0.1s; }
+.order-list .order-card:nth-child(3) { animation-delay: 0.15s; }
+.order-list .order-card:nth-child(4) { animation-delay: 0.2s; }
+.order-list .order-card:nth-child(5) { animation-delay: 0.25s; }
+
+/* ===== ACCESSIBILITY ===== */
+.order-card .detail-btn:focus-visible {
+    outline: 2px solid #E67E22;
+    outline-offset: 2px;
+}
+
+.order-card:focus-within {
+    border-color: rgba(230, 126, 34, 0.3);
+}
+
+/* ===== PRINT STYLES ===== */
+@media print {
+    .order-card {
+        box-shadow: none;
+        border: 1px solid #e0e0e0;
+        page-break-inside: avoid;
+    }
+
+    .order-card .detail-btn {
+        display: none;
+    }
+
+    .order-card:hover {
+        transform: none;
+        box-shadow: none;
+    }
+}
+
+/* ===== REDUCE MOTION ===== */
+@media (prefers-reduced-motion: reduce) {
+    .order-card,
+    .order-card .order-item,
+    .order-card .detail-btn,
+    .order-card .status,
+    .order-card .order-item-img {
+        animation: none;
+        transition: none;
+    }
+
+    .order-card:hover {
+        transform: none;
+    }
+
+    .order-card .detail-btn:hover {
+        transform: none;
+    }
+
+    .order-card .order-item:hover .order-item-img {
+        transform: none;
+    }
+}
+
+/* ===== BADGE FOR NEW ORDERS (Optional) ===== */
+.order-card.new::before {
+    content: 'MỚI';
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    background: linear-gradient(135deg, #E67E22, #d67118);
+    color: #FFFFFF;
+    padding: 4px 12px;
+    border-radius: 12px;
+    font-size: 11px;
+    font-weight: 700;
+    box-shadow: 0 2px 8px rgba(230, 126, 34, 0.4);
+    animation: pulse 2s ease-in-out infinite;
+    z-index: 1;
+}
+
+@keyframes pulse {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.05);
+    }
+}
+
+/* ===== IMAGE ERROR PLACEHOLDER ===== */
+.order-card .order-item-img[src*="default"] {
+    background: linear-gradient(135deg, #f5f5f5, #e0e0e0);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.order-card .order-item-img[src*="default"]::before {
+    content: '📦';
+    font-size: 24px;
+}

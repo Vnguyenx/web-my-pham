@@ -1,0 +1,248 @@
+/* cartItem.css */
+
+.cart-table tbody tr {
+    transition: all 0.3s ease;
+}
+
+.cart-table tbody tr:hover {
+    background-color: #FAFAFA;
+}
+
+/* Product Cell */
+.product-cell {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.product-cell img {
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    border-radius: 6px;
+    border: 1px solid #F5E1DA;
+}
+
+.product-cell div {
+    flex: 1;
+}
+
+.product-cell p {
+    font-size: 15px;
+    font-weight: 500;
+    color: #333333;
+    margin: 0;
+    line-height: 1.4;
+}
+
+/* Price and Total Cells */
+.cart-table td:nth-child(2),
+.cart-table td:nth-child(3),
+.cart-table td:nth-child(4) {
+    text-align: center;
+}
+
+.cart-table td:nth-child(2) {
+    font-weight: 500;
+    color: #666666;
+    font-size: 15px;
+}
+
+.total-cell {
+    font-weight: 600;
+    color: #E67E22;
+    font-size: 16px;
+}
+
+/* Quantity Actions */
+.qty-actions {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background-color: #FFFFFF;
+    border: 1px solid #F5E1DA;
+    border-radius: 6px;
+    padding: 4px;
+}
+
+.qty-actions button {
+    width: 32px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #F5E1DA;
+    color: #333333;
+    border: none;
+    border-radius: 4px;
+    font-size: 18px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.qty-actions button:hover {
+    background-color: #E8D4CC;
+    transform: scale(1.05);
+}
+
+.qty-actions button:active {
+    transform: scale(0.95);
+}
+
+.qty-actions button:disabled {
+    background-color: #F0F0F0;
+    color: #CCCCCC;
+    cursor: not-allowed;
+    transform: none;
+}
+
+.qty-actions span {
+    min-width: 40px;
+    text-align: center;
+    font-weight: 600;
+    color: #333333;
+    font-size: 15px;
+}
+
+/* Delete Button */
+.btn-delete {
+    background: transparent;
+    border: none;
+    font-size: 20px;
+    cursor: pointer;
+    padding: 8px;
+    border-radius: 4px;
+    transition: all 0.2s ease;
+    opacity: 0.6;
+}
+
+.btn-delete:hover {
+    opacity: 1;
+    background-color: #FFF5F5;
+    transform: scale(1.1);
+}
+
+.btn-delete:active {
+    transform: scale(0.95);
+}
+
+/* Responsive cho tablet */
+@media (max-width: 1024px) {
+    .product-cell img {
+        width: 60px;
+        height: 60px;
+    }
+
+    .product-cell p {
+        font-size: 14px;
+    }
+
+    .qty-actions button {
+        width: 28px;
+        height: 28px;
+        font-size: 16px;
+    }
+
+    .qty-actions span {
+        min-width: 35px;
+        font-size: 14px;
+    }
+}
+
+/* Responsive cho mobile - Table scroll */
+@media (max-width: 768px) {
+    .product-cell {
+        gap: 12px;
+    }
+
+    .product-cell img {
+        width: 50px;
+        height: 50px;
+    }
+
+    .product-cell p {
+        font-size: 13px;
+    }
+
+    .cart-table td:nth-child(2),
+    .total-cell {
+        font-size: 14px;
+    }
+
+    .qty-actions button {
+        width: 26px;
+        height: 26px;
+        font-size: 14px;
+    }
+
+    .qty-actions span {
+        min-width: 30px;
+        font-size: 13px;
+    }
+
+    .btn-delete {
+        font-size: 18px;
+    }
+}
+
+/* Alternative: Mobile Card Layout (sử dụng khi chuyển sang card) */
+@media (max-width: 640px) {
+    /* Khi dùng card layout thay vì table */
+    .cart-table td {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 12px 0;
+    }
+
+    .product-cell {
+        flex-direction: row;
+        width: 100%;
+    }
+
+    .cart-table td:nth-child(2),
+    .cart-table td:nth-child(3),
+    .cart-table td:nth-child(4) {
+        text-align: left;
+    }
+
+    .qty-actions {
+        margin-left: auto;
+    }
+
+    .btn-delete {
+        position: absolute;
+        top: 16px;
+        right: 16px;
+    }
+
+    .cart-table tr {
+        position: relative;
+    }
+}
+
+/* Stock warning (tùy chọn - nếu muốn hiển thị cảnh báo hết hàng) */
+.stock-warning {
+    font-size: 12px;
+    color: #A93226;
+    margin-top: 4px;
+    font-weight: 500;
+}
+
+.out-of-stock {
+    opacity: 0.6;
+    pointer-events: none;
+}
+
+.out-of-stock .product-cell::after {
+    content: "Hết hàng";
+    position: absolute;
+    background-color: rgba(169, 50, 38, 0.9);
+    color: #FFFFFF;
+    padding: 4px 12px;
+    border-radius: 4px;
+    font-size: 12px;
+    font-weight: 600;
+    margin-left: 12px;
+}

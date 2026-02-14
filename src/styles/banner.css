@@ -1,0 +1,437 @@
+/* ===== BANNER CONTAINER ===== */
+.banner {
+    position: relative;
+    width: 100%;
+    height: 450px;
+    overflow: hidden;
+    border-radius: 24px;
+    background: #F5E1DA;
+    margin-bottom: 48px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.1);
+}
+
+/* ===== BANNER TRACK (SLIDER) ===== */
+.banner-track {
+    display: flex;
+    height: 100%;
+    transition: transform 0.8s cubic-bezier(0.645, 0.045, 0.355, 1);
+}
+
+/* ===== BANNER ITEM ===== */
+.banner-item {
+    position: relative;
+    min-width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+}
+
+/* ===== IMAGE - NỬA BÊN TRÁI ===== */
+.banner-item img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 55%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    transition: all 0.8s cubic-bezier(0.645, 0.045, 0.355, 1);
+    filter: brightness(0.95) contrast(1.05);
+}
+
+.banner-item:hover img {
+    transform: scale(1.08);
+    filter: brightness(1) contrast(1.1);
+}
+
+/* ===== GRADIENT OVERLAY TINH TẾ ===== */
+.banner-item::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 60%;
+    height: 100%;
+    background: linear-gradient(
+            90deg,
+            transparent 0%,
+            rgba(245, 225, 218, 0.3) 70%,
+            rgba(245, 225, 218, 0.95) 100%
+    );
+    z-index: 1;
+    transition: opacity 0.6s ease;
+}
+
+.banner-item:hover::before {
+    opacity: 0.8;
+}
+
+/* ===== NỀN BÊN PHẢI ===== */
+.banner-item::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 45%;
+    height: 100%;
+    background: linear-gradient(135deg, #F5E1DA 0%, #fceee8 100%);
+    z-index: 0;
+}
+
+/* ===== BANNER INFO - BÊN PHẢI ===== */
+.banner-info {
+    position: relative;
+    z-index: 2;
+    width: 45%;
+    margin-left: auto;
+    margin-right: 60px;
+    padding: 60px 60px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    animation: fadeInRight 1s cubic-bezier(0.645, 0.045, 0.355, 1);
+}
+
+.banner-info h3 {
+    font-size: 42px;
+    font-weight: 700;
+    color: #333333;
+    margin-bottom: 20px;
+    line-height: 1.2;
+    letter-spacing: -1px;
+    background: linear-gradient(135deg, #A93226 0%, #E67E22 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    animation: fadeInUp 1s ease-out 0.2s backwards;
+}
+
+.banner-info p {
+    font-size: 16px;
+    color: #666666;
+    margin-bottom: 28px;
+    line-height: 1.8;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    animation: fadeInUp 1s ease-out 0.4s backwards;
+}
+
+/* ===== ACTION BUTTON ===== */
+.banner-info button {
+    position: relative;
+    align-self: flex-start;
+    padding: 16px 40px;
+    font-size: 15px;
+    font-weight: 600;
+    color: #FFFFFF;
+    background: linear-gradient(135deg, #E67E22 0%, #A93226 100%);
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.4s cubic-bezier(0.645, 0.045, 0.355, 1);
+    box-shadow: 0 8px 24px rgba(230, 126, 34, 0.3);
+    overflow: hidden;
+    animation: fadeInUp 1s ease-out 0.6s backwards;
+}
+
+.banner-info button::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+    transition: left 0.6s ease;
+}
+
+.banner-info button:hover::before {
+    left: 100%;
+}
+
+.banner-info button:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 32px rgba(230, 126, 34, 0.4);
+}
+
+.banner-info button:active {
+    transform: translateY(-2px);
+}
+
+/* ===== DECORATIVE ELEMENTS ===== */
+.banner-item .banner-info::before {
+    content: '';
+    position: absolute;
+    top: -40px;
+    left: 80px;
+    width: 80px;
+    height: 4px;
+    background: linear-gradient(90deg, #E67E22, #A93226);
+    border-radius: 2px;
+    opacity: 0;
+    animation: slideInLeft 0.8s ease-out 0.8s forwards;
+}
+
+/* ===== NAVIGATION ARROWS ===== */
+.banner-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 3;
+    width: 56px;
+    height: 56px;
+    background: #FFFFFF;
+    border: 2px solid #F5E1DA;
+    border-radius: 50%;
+    font-size: 24px;
+    color: #E67E22;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0.9;
+}
+
+.banner-arrow:hover {
+    background: linear-gradient(135deg, #E67E22 0%, #A93226 100%);
+    color: #FFFFFF;
+    transform: translateY(-50%) scale(1.15);
+    box-shadow: 0 8px 28px rgba(230, 126, 34, 0.3);
+    opacity: 1;
+    border-color: transparent;
+}
+
+.banner-arrow.left {
+    left: 32px;
+}
+
+.banner-arrow.right {
+    right: 32px;
+}
+
+/* ===== SKELETON LOADING STATE ===== */
+.banner.skeleton {
+    background: linear-gradient(
+            90deg,
+            #F5E1DA 0%,
+            #fceee8 50%,
+            #F5E1DA 100%
+    );
+    background-size: 200% 100%;
+    animation: skeletonLoading 1.5s ease-in-out infinite;
+}
+
+/* ===== ANIMATIONS ===== */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInRight {
+    from {
+        opacity: 0;
+        transform: translateX(40px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes slideInLeft {
+    from {
+        opacity: 0;
+        width: 0;
+    }
+    to {
+        opacity: 1;
+        width: 80px;
+    }
+}
+
+@keyframes skeletonLoading {
+    0% {
+        background-position: 200% 0;
+    }
+    100% {
+        background-position: -200% 0;
+    }
+}
+
+/* ===== RESPONSIVE: TABLET ===== */
+@media (max-width: 968px) {
+    .banner {
+        height: 500px;
+        border-radius: 20px;
+    }
+
+    .banner-item img {
+        width: 50%;
+    }
+
+    .banner-info {
+        width: 50%;
+        padding: 40px 50px;
+    }
+
+    .banner-info h3 {
+        font-size: 36px;
+        margin-bottom: 20px;
+    }
+
+    .banner-info p {
+        font-size: 16px;
+        margin-bottom: 28px;
+        -webkit-line-clamp: 2;
+    }
+
+    .banner-info button {
+        padding: 16px 40px;
+        font-size: 15px;
+    }
+
+    .banner-arrow {
+        width: 48px;
+        height: 48px;
+        font-size: 20px;
+    }
+
+    .banner-arrow.left {
+        left: 20px;
+    }
+
+    .banner-arrow.right {
+        right: 20px;
+    }
+}
+
+/* ===== RESPONSIVE: MOBILE ===== */
+@media (max-width: 640px) {
+    .banner {
+        height: 500px;
+        border-radius: 16px;
+        margin-bottom: 32px;
+    }
+
+    .banner-item {
+        flex-direction: column;
+    }
+
+    .banner-item img {
+        width: 100%;
+        height: 50%;
+        top: 0;
+        left: 0;
+    }
+
+    .banner-item::before {
+        width: 100%;
+        height: 50%;
+        background: linear-gradient(
+                180deg,
+                transparent 0%,
+                rgba(245, 225, 218, 0.5) 60%,
+                rgba(245, 225, 218, 0.98) 100%
+        );
+    }
+
+    .banner-item::after {
+        width: 100%;
+        height: 50%;
+        top: 50%;
+    }
+
+    .banner-info {
+        width: 100%;
+        margin-left: 0;
+        margin-top: auto;
+        padding: 32px 24px;
+        text-align: center;
+    }
+
+    .banner-info::before {
+        left: 50%;
+        transform: translateX(-50%);
+        top: -20px;
+    }
+
+    .banner-info h3 {
+        font-size: 28px;
+        margin-bottom: 16px;
+    }
+
+    .banner-info p {
+        font-size: 15px;
+        margin-bottom: 24px;
+        -webkit-line-clamp: 2;
+    }
+
+    .banner-info button {
+        align-self: center;
+        padding: 14px 36px;
+        font-size: 14px;
+    }
+
+    .banner-arrow {
+        width: 44px;
+        height: 44px;
+        font-size: 18px;
+    }
+
+    .banner-arrow.left {
+        left: 16px;
+    }
+
+    .banner-arrow.right {
+        right: 16px;
+    }
+}
+
+/* ===== FIRST ITEM SPECIAL STYLE ===== */
+.banner-item:first-child .banner-info h3 {
+    font-size: 56px;
+}
+
+.banner-item:first-child .banner-info p {
+    font-size: 20px;
+}
+
+.banner-item:first-child .banner-info button {
+    padding: 20px 52px;
+}
+
+@media (max-width: 968px) {
+    .banner-item:first-child .banner-info h3 {
+        font-size: 42px;
+    }
+
+    .banner-item:first-child .banner-info p {
+        font-size: 17px;
+    }
+}
+
+@media (max-width: 640px) {
+    .banner-item:first-child .banner-info h3 {
+        font-size: 32px;
+    }
+
+    .banner-item:first-child .banner-info p {
+        font-size: 16px;
+    }
+
+    .banner-item:first-child .banner-info button {
+        padding: 14px 36px;
+    }
+}

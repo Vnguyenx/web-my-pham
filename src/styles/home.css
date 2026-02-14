@@ -1,0 +1,290 @@
+/* ===== HOME PAGE CONTAINER ===== */
+.home {
+    min-height: 100vh;
+    background: linear-gradient(
+            180deg,
+            #FFFFFF 0%,
+            #faf8f7 50%,
+            #FFFFFF 100%
+    );
+}
+
+/* ===== CONTAINER WRAPPER (nếu cần giới hạn width) ===== */
+.home > * {
+    max-width: 1400px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 24px;
+    padding-right: 24px;
+}
+
+/* ===== BANNER SECTION ===== */
+.home > .banner {
+    margin-top: 32px;
+    max-width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 0;
+    padding-right: 0;
+}
+
+/* ===== PRODUCT SLIDER SECTIONS ===== */
+.home .product-slider {
+    position: relative;
+}
+
+/* Add decorative background to slider sections */
+.home .product-slider:nth-of-type(odd) {
+    background: transparent;
+}
+
+.home .product-slider:nth-of-type(even) {
+    background: rgba(245, 225, 218, 0.2);
+    border-radius: 24px;
+    padding: 60px 0;
+}
+
+/* ===== SECTION DIVIDERS ===== */
+.home .product-slider + .product-slider {
+    position: relative;
+}
+
+.home .product-slider:not(:last-of-type)::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80%;
+    height: 1px;
+    background: linear-gradient(
+            90deg,
+            transparent 0%,
+            #E0E0E0 50%,
+            transparent 100%
+    );
+}
+
+/* ===== SPACING BETWEEN SECTIONS ===== */
+.home .product-slider:first-of-type {
+    padding-top: 80px;
+}
+
+.home .product-slider:last-of-type {
+    padding-bottom: 80px;
+}
+
+/* ===== DECORATIVE ELEMENTS ===== */
+.home::before {
+    content: '';
+    position: fixed;
+    top: -200px;
+    right: -200px;
+    width: 500px;
+    height: 500px;
+    background: radial-gradient(
+            circle,
+            rgba(230, 126, 34, 0.08) 0%,
+            transparent 70%
+    );
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 0;
+}
+
+.home::after {
+    content: '';
+    position: fixed;
+    bottom: -200px;
+    left: -200px;
+    width: 500px;
+    height: 500px;
+    background: radial-gradient(
+            circle,
+            rgba(169, 50, 38, 0.06) 0%,
+            transparent 70%
+    );
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 0;
+}
+
+/* Ensure content is above decorative elements */
+.home > * {
+    position: relative;
+    z-index: 1;
+}
+
+/* ===== LOADING STATE ===== */
+.home.loading {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.home.loading::before,
+.home.loading::after {
+    display: none;
+}
+
+/* ===== SECTION ANIMATIONS ===== */
+.home .product-slider {
+    animation: fadeInUp 0.8s ease-out;
+}
+
+.home .product-slider:nth-of-type(1) {
+    animation-delay: 0.1s;
+}
+
+.home .product-slider:nth-of-type(2) {
+    animation-delay: 0.2s;
+}
+
+.home .product-slider:nth-of-type(3) {
+    animation-delay: 0.3s;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ===== RESPONSIVE: LARGE DESKTOP ===== */
+@media (min-width: 1600px) {
+    .home > * {
+        max-width: 1600px;
+        padding-left: 48px;
+        padding-right: 48px;
+    }
+
+    .home .slider:nth-child(even) {
+        margin: 0 -48px;
+        padding: 60px 48px;
+    }
+}
+
+/* ===== RESPONSIVE: TABLET ===== */
+@media (max-width: 968px) {
+    .home > * {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+
+    .home > .banner {
+        margin-top: 24px;
+    }
+
+    .home .product-slider:nth-of-type(even) {
+        margin: 0;
+        padding: 48px 0;
+        border-radius: 20px;
+    }
+
+    .home .product-slider:first-of-type {
+        padding-top: 60px;
+    }
+
+    .home .product-slider:last-of-type {
+        padding-bottom: 60px;
+    }
+
+    .home::before,
+    .home::after {
+        width: 400px;
+        height: 400px;
+    }
+}
+
+/* ===== RESPONSIVE: MOBILE ===== */
+@media (max-width: 640px) {
+    .home {
+        background: #FFFFFF;
+    }
+
+    .home > * {
+        padding-left: 16px;
+        padding-right: 16px;
+    }
+
+    .home > .banner {
+        margin-top: 16px;
+    }
+
+    .home .product-slider:nth-of-type(even) {
+        background: rgba(245, 225, 218, 0.15);
+        margin: 0;
+        padding: 40px 0;
+        border-radius: 16px;
+    }
+
+    .home .product-slider:first-of-type {
+        padding-top: 48px;
+    }
+
+    .home .product-slider:last-of-type {
+        padding-bottom: 48px;
+    }
+
+    .home .product-slider:not(:last-of-type)::after {
+        width: 90%;
+    }
+
+    /* Hide decorative elements on mobile for performance */
+    .home::before,
+    .home::after {
+        display: none;
+    }
+}
+
+/* ===== SPECIAL STYLING FOR SECTION TITLES ===== */
+.home .slider h2 {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+/* Make emoji in titles slightly larger */
+.home .slider h2::first-letter {
+    font-size: 1.2em;
+}
+
+/* ===== SMOOTH SCROLL BEHAVIOR ===== */
+.home {
+    scroll-behavior: smooth;
+}
+
+/* ===== ACCESSIBILITY: REDUCE MOTION ===== */
+@media (prefers-reduced-motion: reduce) {
+    .home,
+    .home .product-slider {
+        animation: none;
+        transition: none;
+    }
+
+    .home {
+        scroll-behavior: auto;
+    }
+}
+
+/* ===== PRINT STYLES ===== */
+@media print {
+    .home::before,
+    .home::after {
+        display: none;
+    }
+
+    .home {
+        background: white;
+    }
+
+    .home .product-slider:nth-of-type(even) {
+        background: transparent;
+    }
+}
