@@ -1,13 +1,13 @@
 {
   "files": {
     "main.css": "/web-my-pham/static/css/main.f1a788e1.css",
-    "main.js": "/web-my-pham/static/js/main.fb83f36e.js",
+    "main.js": "/web-my-pham/static/js/main.f28ce01c.js",
     "index.html": "/web-my-pham/index.html",
     "main.f1a788e1.css.map": "/web-my-pham/static/css/main.f1a788e1.css.map",
-    "main.fb83f36e.js.map": "/web-my-pham/static/js/main.fb83f36e.js.map"
+    "main.f28ce01c.js.map": "/web-my-pham/static/js/main.f28ce01c.js.map"
   },
   "entrypoints": [
     "static/css/main.f1a788e1.css",
-    "static/js/main.fb83f36e.js"
+    "static/js/main.f28ce01c.js"
   ]
 }
