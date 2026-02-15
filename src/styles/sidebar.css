@@ -387,3 +387,133 @@
         transform: translate(-50%, -50%) rotate(360deg);
     }
 }
+
+/* ============================================= */
+/* ===== RESPONSIVE SYSTEM FOR SIDEBAR ===== */
+/* ============================================= */
+/* Copy file này và import sau sidebar.css */
+
+/* ===== LAPTOP SMALL (≤1024px) ===== */
+@media (max-width: 1024px) {
+
+    .product-sidebar {
+        padding: 20px;
+    }
+
+    .sidebar-title {
+        font-size: 18px;
+    }
+}
+
+/* ===== TABLET (≤820px) ===== */
+@media (max-width: 820px) {
+
+    .product-sidebar {
+        position: static;
+        margin-bottom: 20px;
+        padding: 18px;
+    }
+
+    .sidebar-title {
+        font-size: 17px;
+        margin-bottom: 14px;
+    }
+
+    .category-parent {
+        padding: 10px 14px;
+        font-size: 14px;
+    }
+
+    .sub-category-list li {
+        padding: 8px 14px;
+        font-size: 13px;
+    }
+}
+
+/* ===== MOBILE (≤640px) ===== */
+@media (max-width: 640px) {
+
+    .product-sidebar {
+        width: 100%;
+        padding: 16px;
+        border-radius: 12px;
+    }
+
+    .sidebar-title {
+        font-size: 16px;
+        padding-bottom: 10px;
+    }
+
+    .filter-list {
+        max-height: 300px;
+    }
+
+    .category-parent {
+        padding: 10px 12px;
+        font-size: 13px;
+        border-radius: 8px;
+    }
+
+    .sub-category-list {
+        gap: 4px;
+    }
+
+    .sub-category-list li {
+        padding: 8px 12px;
+        font-size: 12px;
+        border-radius: 6px;
+    }
+}
+
+/* ===== SMALL MOBILE (≤480px) ===== */
+@media (max-width: 480px) {
+
+    .product-sidebar {
+        padding: 14px;
+    }
+
+    .sidebar-title {
+        font-size: 15px;
+    }
+
+    .category-parent {
+        font-size: 12px;
+    }
+
+    .sub-category-list li {
+        font-size: 11px;
+    }
+}
+
+/* ===== VERY SMALL MOBILE (≤375px) ===== */
+@media (max-width: 375px) {
+
+    .sidebar-title {
+        font-size: 14px;
+    }
+
+    .category-parent {
+        padding: 8px;
+    }
+
+    .sub-category-list li {
+        padding: 6px;
+    }
+}
+
+/* ===== LANDSCAPE MOBILE ===== */
+@media (max-width: 820px) and (orientation: landscape) {
+
+    .filter-list {
+        max-height: 200px;
+    }
+}
+
+/* ===== TOUCH DEVICE OPTIMIZATION ===== */
+@media (hover: none) and (pointer: coarse) {
+
+    .category-parent,
+    .sub-category-list li {
+        min-height: 36px;
+    }
+}

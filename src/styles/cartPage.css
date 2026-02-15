@@ -238,3 +238,62 @@
     outline-offset: 4px;
     border-radius: 4px;
 }
+/* --- Responsive cho Giỏ hàng --- */
+/* ============================================= */
+/* ===== RESPONSIVE SYSTEM FOR CART PAGE ===== */
+/* ============================================= */
+
+/* ===== TABLET (≤1024px) ===== */
+@media (max-width: 1024px) {
+
+    .cart-layout-grid {
+        grid-template-columns: 1fr 350px;
+        gap: 24px;
+    }
+
+    .page-heading {
+        font-size: 24px;
+    }
+}
+
+/* ===== MOBILE (≤768px) ===== */
+@media (max-width: 768px) {
+
+    .cart-layout-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .cart-right-section {
+        position: static;
+        order: 2;
+    }
+
+    .cart-left-section {
+        order: 1;
+    }
+
+    .page-heading {
+        font-size: 20px;
+    }
+}
+
+/* ===== SMALL MOBILE (≤480px) ===== */
+@media (max-width: 480px) {
+
+    .cart-page-container {
+        padding: 20px 10px;
+    }
+
+    .page-heading {
+        font-size: 18px;
+    }
+
+    .cart-empty-state {
+        padding: 50px 16px;
+    }
+
+    .cart-empty-state .btn-shop-now {
+        width: 100%;
+    }
+}

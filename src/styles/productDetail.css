@@ -386,3 +386,293 @@
         page-break-before: always;
     }
 }
+
+@media (max-width: 480px) {
+    .product-info-container {
+        grid-template-columns: 1fr; /* Chuyển từ 2 cột về 1 cột */
+        gap: 20px;
+        padding: 15px;
+        margin: 10px 0;
+    }
+
+    .main-image {
+        border-radius: 8px;
+    }
+
+    .product-details h1 {
+        font-size: 20px;
+    }
+
+    .action-buttons {
+        flex-direction: column; /* Nút Mua ngay & Giỏ hàng xếp chồng */
+        gap: 10px;
+    }
+
+    .btn-add-to-cart, .btn-buy-now {
+        width: 100% !important;
+        padding: 15px;
+    }
+}
+
+/* ============================================= */
+/* ===== RESPONSIVE CHO PRODUCT DETAIL PAGE ===== */
+/* ============================================= */
+/* Copy và paste phần này vào cuối file CSS */
+
+/* ===== LAPTOP NHỎ / TABLET LỚN (1200px) ===== */
+@media (max-width: 1200px) {
+    .product-detail-page {
+        max-width: 1100px;
+        padding: 18px;
+    }
+
+    .section-title {
+        font-size: 26px;
+    }
+
+    .product-grid {
+        gap: 20px;
+    }
+
+    .pagination-btn {
+        padding: 9px 18px;
+        font-size: 14.5px;
+    }
+}
+
+/* ===== TABLET LỚN (1024px) ===== */
+@media (max-width: 1024px) {
+    .product-detail-page {
+        padding: 16px;
+    }
+
+    .section-title {
+        font-size: 24px;
+    }
+
+    .page-info {
+        font-size: 13px;
+    }
+
+    .product-grid {
+        grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+        gap: 18px;
+    }
+
+    .pagination {
+        gap: 10px;
+    }
+
+    .pagination-number {
+        width: 38px;
+        height: 38px;
+    }
+}
+
+/* ===== TABLET (820px) ===== */
+@media (max-width: 820px) {
+    .related-products {
+        margin-top: 40px;
+        padding-top: 30px;
+    }
+
+    .section-header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .section-title {
+        font-size: 22px;
+    }
+
+    .product-grid {
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+        gap: 16px;
+    }
+
+    .pagination-btn {
+        padding: 8px 16px;
+    }
+}
+
+/* ===== MOBILE LỚN (640px) ===== */
+@media (max-width: 640px) {
+    .product-detail-page {
+        padding: 14px;
+    }
+
+    .loading {
+        font-size: 15px;
+        min-height: 320px;
+    }
+
+    .loading::before {
+        width: 32px;
+        height: 32px;
+    }
+
+    .section-title {
+        font-size: 20px;
+        padding-bottom: 10px;
+    }
+
+    .section-title::after {
+        width: 60px;
+        height: 2px;
+    }
+
+    .product-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 14px;
+    }
+
+    .pagination {
+        flex-wrap: wrap;
+        gap: 8px;
+    }
+
+    .pagination-btn {
+        flex: 1 1 auto;
+        min-width: 90px;
+    }
+}
+
+/* ===== MOBILE TRUNG BÌNH (480px) ===== */
+@media (max-width: 480px) {
+    .product-detail-page {
+        padding: 12px;
+    }
+
+    .loading {
+        font-size: 14px;
+        min-height: 280px;
+        margin: 20px 0;
+    }
+
+    .loading::before {
+        width: 28px;
+        height: 28px;
+        border-width: 3px;
+    }
+
+    .section-title {
+        font-size: 18px;
+    }
+
+    .page-info {
+        font-size: 12px;
+        padding: 5px 10px;
+    }
+
+    .product-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 12px;
+    }
+
+    .pagination-number {
+        width: 34px;
+        height: 34px;
+        font-size: 13px;
+    }
+
+    .pagination-numbers button:nth-child(n+6) {
+        display: none;
+    }
+
+    .product-grid:empty::after {
+        padding: 40px 20px;
+        font-size: 14px;
+    }
+}
+
+/* ===== MOBILE NHỎ (375px) ===== */
+@media (max-width: 375px) {
+    .product-detail-page {
+        padding: 10px;
+    }
+
+    .section-title {
+        font-size: 17px;
+    }
+
+    .product-grid {
+        gap: 10px;
+    }
+
+    .pagination-btn {
+        padding: 7px 10px;
+        font-size: 12.5px;
+    }
+}
+
+/* ===== VERY SMALL (320px) ===== */
+@media (max-width: 320px) {
+    .section-title {
+        font-size: 16px;
+    }
+
+    .product-grid {
+        grid-template-columns: 1fr;
+        gap: 10px;
+    }
+
+    .pagination-number {
+        width: 30px;
+        height: 30px;
+        font-size: 12px;
+    }
+}
+
+/* ===== LANDSCAPE MOBILE ===== */
+@media (max-width: 820px) and (orientation: landscape) {
+    .product-detail-page {
+        padding: 12px;
+    }
+
+    .section-title {
+        font-size: 18px;
+    }
+
+    .product-grid {
+        gap: 12px;
+    }
+}
+
+/* ===== TỐI ƯU CHO TOUCH DEVICES ===== */
+@media (hover: none) and (pointer: coarse) {
+    .pagination-btn,
+    .pagination-number {
+        min-height: 44px;
+    }
+
+    .pagination-btn:hover,
+    .pagination-number:hover {
+        transform: none;
+    }
+}
+
+/* ===== GIẢM ANIMATION CHO MOBILE ===== */
+@media (max-width: 640px) {
+    .product-grid {
+        animation: none;
+    }
+
+    .pagination-btn,
+    .pagination-number {
+        transition: background 0.2s ease;
+    }
+}
+
+/* ===== REDUCE MOTION ===== */
+@media (prefers-reduced-motion: reduce) {
+    .product-grid {
+        animation: none;
+    }
+
+    .pagination-btn,
+    .pagination-number,
+    .loading::before {
+        transition: none;
+        animation: none;
+    }
+}

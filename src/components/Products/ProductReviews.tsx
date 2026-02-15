@@ -48,7 +48,6 @@ const ProductReviews = ({ productId }: Props) => {
         <div className="product-reviews-section">
             {/* PHẦN FORM NHẬP */}
             <ReviewForm productId={productId} />
-
             <hr className="divider" />
 
             {/* DANH SÁCH ĐÁNH GIÁ */}

@@ -160,3 +160,73 @@
 .cart-items.empty a:hover {
     background-color: #D97317;
 }
+
+/* ============================================= */
+/* ===== RESPONSIVE SYSTEM FOR CART LIST ===== */
+/* ============================================= */
+
+/* ===== TABLET (≤1024px) ===== */
+@media (max-width: 1024px) {
+
+    .cart-table th,
+    .cart-table td {
+        padding: 14px;
+    }
+}
+
+/* ===== MOBILE SCROLL TABLE (≤768px) ===== */
+@media (max-width: 768px) {
+
+    .cart-items {
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    .cart-table {
+        min-width: 600px;
+    }
+
+    .cart-table th {
+        font-size: 11px;
+    }
+}
+
+/* ===== MOBILE CARD LAYOUT (≤640px) ===== */
+@media (max-width: 640px) {
+
+    .cart-table thead {
+        display: none;
+    }
+
+    .cart-table,
+    .cart-table tbody,
+    .cart-table tr,
+    .cart-table td {
+        display: block;
+        width: 100%;
+    }
+
+    .cart-table tr {
+        margin-bottom: 20px;
+        border: 1px solid #F5E1DA;
+        border-radius: 12px;
+        padding: 16px;
+        background: #FFFFFF;
+    }
+
+    .cart-table td {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 8px 0;
+        border: none;
+    }
+
+    .cart-table td::before {
+        content: attr(data-label);
+        font-weight: 600;
+        font-size: 11px;
+        text-transform: uppercase;
+        color: #666;
+    }
+}

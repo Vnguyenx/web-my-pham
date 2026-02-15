@@ -487,3 +487,544 @@
     content: '📦';
     font-size: 24px;
 }
+
+/* ============================================= */
+/* ===== RESPONSIVE CHO ORDERCARD.CSS ===== */
+/* ============================================= */
+/* Copy và paste phần này vào cuối file ordercard.css */
+
+/* ===== LAPTOP/TABLET LỚN (1024px) ===== */
+@media (max-width: 1024px) {
+    .order-card {
+        padding: 19px;
+        border-radius: 15px;
+    }
+
+    .order-card .order-header {
+        padding-bottom: 15px;
+        margin-bottom: 15px;
+        gap: 11px;
+    }
+
+    .order-card .order-header strong {
+        font-size: 17px;
+    }
+
+    .order-card .order-header .order-date {
+        font-size: 13.5px;
+    }
+
+    .order-card .status {
+        padding: 5px 15px;
+        font-size: 12.5px;
+    }
+
+    .order-card .order-item {
+        padding: 11px 0;
+        gap: 15px;
+    }
+
+    .order-card .order-item-content {
+        gap: 11px;
+    }
+
+    .order-card .order-item-img {
+        width: 58px;
+        height: 58px;
+    }
+
+    .order-card .order-item-info strong {
+        font-size: 14.5px;
+    }
+
+    .order-card .order-item-price {
+        font-size: 14.5px;
+    }
+
+    .order-card .order-footer {
+        padding-top: 15px;
+        margin-top: 15px;
+        gap: 15px;
+    }
+
+    .order-card .order-footer strong {
+        font-size: 16.5px;
+    }
+
+    .order-card .detail-btn {
+        padding: 9px 22px;
+        font-size: 13.5px;
+    }
+}
+
+/* ===== TABLET (820px) ===== */
+@media (max-width: 820px) {
+    .order-card {
+        padding: 18px;
+        border-radius: 14px;
+    }
+
+    .order-card .order-header {
+        gap: 10px;
+        flex-wrap: wrap;
+    }
+
+    .order-card .order-header strong {
+        font-size: 16px;
+    }
+
+    .order-card .order-header .order-date {
+        flex: 1 1 100%;
+        order: 1;
+        font-size: 13px;
+    }
+
+    .order-card .status {
+        order: 2;
+        padding: 5px 14px;
+    }
+
+    .order-card .order-item-img {
+        width: 55px;
+        height: 55px;
+    }
+
+    .order-card .order-item-info strong {
+        font-size: 14px;
+    }
+
+    .order-card .order-item-info p {
+        font-size: 12px;
+    }
+
+    .order-card .order-item-price {
+        font-size: 14px;
+    }
+
+    .order-card .order-footer {
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 12px;
+    }
+
+    .order-card .order-footer strong {
+        flex: 1 1 100%;
+    }
+
+    .order-card .detail-btn {
+        flex: 1;
+        min-width: 150px;
+    }
+}
+
+/* ===== MOBILE LỚN (640px) ===== */
+@media (max-width: 640px) {
+    .order-card {
+        padding: 16px;
+        border-radius: 12px;
+    }
+
+    .order-card:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+    }
+
+    .order-card .order-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 8px;
+        padding-bottom: 14px;
+        margin-bottom: 14px;
+    }
+
+    .order-card .order-header strong {
+        font-size: 16px;
+    }
+
+    .order-card .order-header .order-date {
+        font-size: 13px;
+        width: 100%;
+        order: initial;
+    }
+
+    .order-card .status {
+        align-self: flex-start;
+        order: initial;
+    }
+
+    .order-card .order-item {
+        padding: 10px 0;
+        gap: 12px;
+    }
+
+    .order-card .order-item-content {
+        gap: 10px;
+    }
+
+    .order-card .order-item-img {
+        width: 50px;
+        height: 50px;
+        border-radius: 7px;
+    }
+
+    .order-card .order-item-info strong {
+        font-size: 14px;
+        margin-bottom: 3px;
+    }
+
+    .order-card .order-item-info p {
+        font-size: 12px;
+    }
+
+    .order-card .order-item-price {
+        font-size: 14px;
+    }
+
+    .order-card .order-footer {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 12px;
+        padding-top: 14px;
+        margin-top: 14px;
+    }
+
+    .order-card .order-footer strong {
+        font-size: 16px;
+        width: 100%;
+    }
+
+    .order-card .detail-btn {
+        width: 100%;
+        text-align: center;
+        padding: 12px 20px;
+        font-size: 14px;
+    }
+
+    .order-list {
+        gap: 14px;
+    }
+}
+
+/* ===== MOBILE TRUNG BÌNH (480px) ===== */
+@media (max-width: 480px) {
+    .order-card {
+        padding: 14px;
+        border-radius: 10px;
+    }
+
+    .order-card .order-header {
+        padding-bottom: 12px;
+        margin-bottom: 12px;
+        gap: 7px;
+    }
+
+    .order-card .order-header strong {
+        font-size: 15px;
+    }
+
+    .order-card .order-header .order-date {
+        font-size: 12px;
+    }
+
+    .order-card .order-header .order-date::before {
+        margin-right: 4px;
+    }
+
+    .order-card .status {
+        padding: 4px 12px;
+        font-size: 11px;
+        border-radius: 16px;
+    }
+
+    .order-card .order-item {
+        padding: 9px 0;
+        gap: 10px;
+    }
+
+    .order-card .order-item:hover {
+        padding-left: 10px;
+        padding-right: 10px;
+        margin: 0 -10px;
+    }
+
+    .order-card .order-item-content {
+        gap: 9px;
+    }
+
+    .order-card .order-item-img {
+        width: 48px;
+        height: 48px;
+        border-radius: 6px;
+        border-width: 1.5px;
+    }
+
+    .order-card .order-item-info strong {
+        font-size: 13px;
+    }
+
+    .order-card .order-item-info p {
+        font-size: 11px;
+    }
+
+    .order-card .order-item-price {
+        font-size: 13px;
+    }
+
+    .order-card .order-footer {
+        padding-top: 12px;
+        margin-top: 12px;
+        gap: 10px;
+    }
+
+    .order-card .order-footer strong {
+        font-size: 15px;
+    }
+
+    .order-card .detail-btn {
+        padding: 11px 18px;
+        font-size: 13px;
+        border-radius: 9px;
+    }
+
+    .order-card .detail-btn::after {
+        margin-left: 4px;
+    }
+
+    .order-list {
+        gap: 12px;
+    }
+
+    /* Badge for new orders */
+    .order-card.new::before {
+        top: 10px;
+        right: 10px;
+        padding: 3px 10px;
+        font-size: 10px;
+    }
+}
+
+/* ===== MOBILE NHỎ (375px) ===== */
+@media (max-width: 375px) {
+    .order-card {
+        padding: 12px;
+        border-radius: 10px;
+    }
+
+    .order-card .order-header {
+        padding-bottom: 10px;
+        margin-bottom: 10px;
+    }
+
+    .order-card .order-header strong {
+        font-size: 14px;
+    }
+
+    .order-card .order-header .order-date {
+        font-size: 11px;
+    }
+
+    .order-card .status {
+        padding: 4px 11px;
+        font-size: 10px;
+    }
+
+    .order-card .order-item {
+        padding: 8px 0;
+    }
+
+    .order-card .order-item-img {
+        width: 45px;
+        height: 45px;
+    }
+
+    .order-card .order-item-info strong {
+        font-size: 12px;
+    }
+
+    .order-card .order-item-info p {
+        font-size: 10px;
+    }
+
+    .order-card .order-item-price {
+        font-size: 12px;
+    }
+
+    .order-card .order-footer {
+        padding-top: 10px;
+        margin-top: 10px;
+    }
+
+    .order-card .order-footer strong {
+        font-size: 14px;
+    }
+
+    .order-card .detail-btn {
+        padding: 10px 16px;
+        font-size: 12px;
+        border-radius: 8px;
+    }
+
+    .order-card.new::before {
+        top: 8px;
+        right: 8px;
+        padding: 2px 8px;
+        font-size: 9px;
+    }
+}
+
+/* ===== LANDSCAPE MOBILE ===== */
+@media (max-width: 820px) and (orientation: landscape) {
+    .order-card {
+        padding: 14px 16px;
+    }
+
+    .order-card .order-header {
+        flex-direction: row;
+        align-items: center;
+        gap: 10px;
+    }
+
+    .order-card .order-header .order-date {
+        flex: 1;
+        order: initial;
+    }
+
+    .order-card .order-item {
+        padding: 8px 0;
+    }
+
+    .order-card .order-item-img {
+        width: 50px;
+        height: 50px;
+    }
+
+    .order-card .order-footer {
+        flex-direction: row;
+        align-items: center;
+    }
+
+    .order-card .detail-btn {
+        width: auto;
+        min-width: 140px;
+    }
+}
+
+/* ===== TỐI ƯU CHO TOUCH DEVICES ===== */
+@media (hover: none) and (pointer: coarse) {
+    .order-card .detail-btn {
+        min-height: 48px;
+        padding: 12px 24px;
+    }
+
+    /* Bỏ hover effects phức tạp */
+    .order-card:hover {
+        transform: none;
+        box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+        border-color: transparent;
+    }
+
+    .order-card .order-item:hover {
+        background: transparent;
+        padding-left: 0;
+        padding-right: 0;
+        margin: 0;
+    }
+
+    .order-card .order-item:hover .order-item-img {
+        border-color: #f0f0f0;
+        transform: none;
+    }
+
+    .order-card .detail-btn:hover {
+        transform: none;
+    }
+
+    .order-card .detail-btn:hover::after {
+        transform: none;
+    }
+}
+
+/* ===== TỐI ƯU ANIMATION CHO MOBILE ===== */
+@media (max-width: 640px) {
+    /* Giảm animation */
+    @keyframes fadeInUp {
+        from {
+            opacity: 0;
+            transform: translateY(12px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    .order-card {
+        animation-duration: 0.3s;
+    }
+
+    /* Giảm stagger delay */
+    .order-list .order-card:nth-child(1) { animation-delay: 0.03s; }
+    .order-list .order-card:nth-child(2) { animation-delay: 0.06s; }
+    .order-list .order-card:nth-child(3) { animation-delay: 0.09s; }
+    .order-list .order-card:nth-child(4) { animation-delay: 0.12s; }
+    .order-list .order-card:nth-child(5) { animation-delay: 0.15s; }
+
+    .order-card .detail-btn::before {
+        transition: width 0.4s, height 0.4s;
+    }
+
+    .order-card .detail-btn:hover::before {
+        width: 200px;
+        height: 200px;
+    }
+}
+
+/* ===== VERY SMALL SCREENS (320px) ===== */
+@media (max-width: 320px) {
+    .order-card {
+        padding: 10px;
+    }
+
+    .order-card .order-header strong {
+        font-size: 13px;
+    }
+
+    .order-card .order-header .order-date {
+        font-size: 10px;
+    }
+
+    .order-card .order-item-img {
+        width: 42px;
+        height: 42px;
+    }
+
+    .order-card .order-item-info strong {
+        font-size: 11px;
+    }
+
+    .order-card .detail-btn {
+        padding: 9px 14px;
+        font-size: 11px;
+    }
+}
+
+/* ===== LOADING STATE MOBILE ===== */
+@media (max-width: 640px) {
+    .order-card.loading::after {
+        width: 28px;
+        height: 28px;
+        border-width: 2.5px;
+    }
+}
+
+/* ===== FOCUS IMPROVEMENT MOBILE ===== */
+@media (max-width: 640px) {
+    .order-card .detail-btn:focus-visible {
+        outline-width: 2px;
+        outline-offset: 1px;
+    }
+
+    .order-card:focus-within {
+        border-color: rgba(230, 126, 34, 0.25);
+    }
+}

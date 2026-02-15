@@ -345,3 +345,554 @@
         page-break-inside: avoid;
     }
 }
+
+/* ============================================= */
+/* ===== RESPONSIVE CHO PRODUCTTABS.CSS ===== */
+/* ============================================= */
+/* Copy và paste phần này vào cuối file productTabs.css */
+
+/* ===== LAPTOP/TABLET LỚN (1024px) ===== */
+@media (max-width: 1024px) {
+    .product-tabs {
+        margin: 36px 0;
+        border-radius: 11px;
+    }
+
+    .tab-headers button {
+        padding: 17px 22px;
+        font-size: 15px;
+        letter-spacing: 0.4px;
+    }
+
+    .tab-headers button.active::after {
+        height: 2.5px;
+        bottom: -2.5px;
+    }
+
+    .tab-content {
+        padding: 28px;
+        min-height: 280px;
+    }
+
+    .usage-tab ol {
+        padding-left: 28px;
+    }
+
+    .usage-tab ol li {
+        margin: 18px 0;
+        font-size: 14.5px;
+    }
+
+    .usage-tab ol li::before {
+        width: 27px;
+        height: 27px;
+        font-size: 13.5px;
+        left: -28px;
+    }
+
+    .specs-table td {
+        padding: 17px 22px;
+        font-size: 14.5px;
+    }
+
+    .specs-table td:first-child {
+        width: 36%;
+    }
+
+    .specs-table td:last-child {
+        width: 64%;
+    }
+}
+
+/* ===== TABLET (820px) ===== */
+@media (max-width: 820px) {
+    .product-tabs {
+        margin: 32px 0;
+        border-radius: 11px;
+    }
+
+    .tab-headers {
+        border-bottom-width: 2.5px;
+    }
+
+    .tab-headers button {
+        padding: 16px 20px;
+        font-size: 15px;
+        letter-spacing: 0.4px;
+    }
+
+    .tab-headers button.active::after {
+        height: 2.5px;
+    }
+
+    .tab-content {
+        padding: 26px 22px;
+        min-height: 260px;
+    }
+
+    .usage-tab ol {
+        padding-left: 26px;
+    }
+
+    .usage-tab ol li {
+        margin: 17px 0;
+        font-size: 14px;
+        padding-left: 18px;
+    }
+
+    .usage-tab ol li::before {
+        width: 26px;
+        height: 26px;
+        font-size: 13px;
+        left: -26px;
+    }
+
+    .specs-table {
+        border-radius: 7px;
+    }
+
+    .specs-table td {
+        padding: 16px 20px;
+        font-size: 14px;
+    }
+
+    .specs-table td:first-child {
+        width: 38%;
+    }
+
+    .specs-table td:last-child {
+        width: 62%;
+    }
+}
+
+/* ===== MOBILE LỚN (640px) ===== */
+@media (max-width: 640px) {
+    .product-tabs {
+        margin: 26px 0;
+        border-radius: 10px;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.07);
+    }
+
+    .tab-headers {
+        flex-wrap: wrap;
+        border-bottom-width: 2px;
+    }
+
+    .tab-headers button {
+        flex: 1 1 calc(50% - 1px);
+        padding: 14px 18px;
+        font-size: 14px;
+        letter-spacing: 0.3px;
+        border-right: 1px solid #F5E1DA;
+    }
+
+    .tab-headers button:nth-child(2n) {
+        border-right: none;
+    }
+
+    .tab-headers button.active::after {
+        height: 2px;
+    }
+
+    .tab-content {
+        padding: 22px 18px;
+        min-height: 240px;
+    }
+
+    .content-inner {
+        font-size: 14px;
+        line-height: 1.7;
+    }
+
+    .usage-tab ol {
+        padding-left: 24px;
+    }
+
+    .usage-tab ol li {
+        margin: 16px 0;
+        font-size: 14px;
+        padding-left: 16px;
+    }
+
+    .usage-tab ol li::before {
+        width: 25px;
+        height: 25px;
+        font-size: 12px;
+        left: -24px;
+    }
+
+    .specs-table {
+        border-radius: 7px;
+    }
+
+    .specs-table td {
+        padding: 14px 16px;
+        font-size: 13px;
+    }
+
+    .specs-table td:first-child {
+        width: 40%;
+    }
+
+    .specs-table td:last-child {
+        width: 60%;
+    }
+}
+
+/* ===== MOBILE TRUNG BÌNH (480px) ===== */
+@media (max-width: 480px) {
+    .product-tabs {
+        margin: 22px 0;
+        border-radius: 9px;
+        box-shadow: 0 2px 9px rgba(0, 0, 0, 0.06);
+    }
+
+    .tab-headers {
+        flex-direction: row;
+        overflow-x: auto;
+        overflow-y: hidden;
+        display: flex;
+        white-space: nowrap;
+        scrollbar-width: thin;
+        -webkit-overflow-scrolling: touch;
+        border-bottom-width: 2px;
+        padding-bottom: 0;
+    }
+
+    .tab-headers::-webkit-scrollbar {
+        height: 3px;
+    }
+
+    .tab-headers::-webkit-scrollbar-track {
+        background: #f5f5f5;
+    }
+
+    .tab-headers::-webkit-scrollbar-thumb {
+        background: #E67E22;
+        border-radius: 2px;
+    }
+
+    .tab-headers button {
+        flex: none;
+        min-width: auto;
+        padding: 13px 16px;
+        font-size: 13px;
+        letter-spacing: 0.3px;
+        border-right: 1px solid #F5E1DA;
+        border-bottom: none;
+        text-align: center;
+    }
+
+    .tab-headers button:last-child {
+        border-right: none;
+    }
+
+    .tab-headers button.active {
+        background: #FFFFFF;
+    }
+
+    .tab-headers button.active::after {
+        display: block;
+        height: 2px;
+        bottom: -2px;
+    }
+
+    .tab-content {
+        padding: 18px 14px;
+        min-height: 220px;
+    }
+
+    .content-inner {
+        font-size: 14px;
+        line-height: 1.7;
+    }
+
+    .usage-tab ol {
+        padding-left: 22px;
+    }
+
+    .usage-tab ol li {
+        margin: 15px 0;
+        font-size: 13px;
+        padding-left: 14px;
+        line-height: 1.7;
+    }
+
+    .usage-tab ol li::before {
+        width: 24px;
+        height: 24px;
+        font-size: 12px;
+        left: -22px;
+    }
+
+    .specs-table {
+        border-radius: 7px;
+        box-shadow: 0 2px 7px rgba(0, 0, 0, 0.04);
+    }
+
+    .specs-table tbody tr {
+        display: flex;
+        flex-direction: column;
+        border-bottom: 1px solid #F5E1DA;
+        padding: 12px 0;
+        margin-bottom: 0;
+    }
+
+    .specs-table tbody tr:last-child {
+        border-bottom: none;
+    }
+
+    .specs-table td {
+        display: block;
+        width: 100% !important;
+        padding: 6px 14px !important;
+        border: none !important;
+        font-size: 13px;
+    }
+
+    .specs-table td:first-child {
+        font-weight: 700;
+        color: #E67E22;
+        background: transparent !important;
+        padding-bottom: 4px !important;
+    }
+
+    .specs-table td:last-child {
+        padding-top: 4px !important;
+        color: #555;
+    }
+
+    .reviews-tab {
+        padding: 0;
+    }
+
+    @keyframes fadeInContent {
+        from {
+            opacity: 0;
+            transform: translateY(8px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+}
+
+/* ===== MOBILE NHỎ (375px) ===== */
+@media (max-width: 375px) {
+    .product-tabs {
+        margin: 20px 0;
+        border-radius: 8px;
+    }
+
+    .tab-headers button {
+        padding: 12px 14px;
+        font-size: 12px;
+        letter-spacing: 0.2px;
+    }
+
+    .tab-content {
+        padding: 16px 12px;
+        min-height: 200px;
+    }
+
+    .content-inner {
+        font-size: 13px;
+    }
+
+    .usage-tab ol {
+        padding-left: 20px;
+    }
+
+    .usage-tab ol li {
+        margin: 14px 0;
+        font-size: 13px;
+        padding-left: 12px;
+    }
+
+    .usage-tab ol li::before {
+        width: 23px;
+        height: 23px;
+        font-size: 11px;
+        left: -20px;
+    }
+
+    .specs-table tbody tr {
+        padding: 10px 0;
+    }
+
+    .specs-table td {
+        padding: 5px 12px !important;
+        font-size: 12px;
+    }
+}
+
+/* ===== LANDSCAPE MOBILE ===== */
+@media (max-width: 820px) and (orientation: landscape) {
+    .product-tabs {
+        margin: 24px 0;
+    }
+
+    .tab-headers {
+        flex-direction: row;
+        overflow-x: auto;
+    }
+
+    .tab-headers button {
+        flex: none;
+        padding: 12px 18px;
+        font-size: 13px;
+    }
+
+    .tab-content {
+        padding: 20px 16px;
+        min-height: 200px;
+    }
+
+    .usage-tab ol li {
+        margin: 14px 0;
+        font-size: 13px;
+    }
+
+    .specs-table td {
+        padding: 12px 16px;
+        font-size: 13px;
+    }
+}
+
+/* ===== TỐI ƯU CHO TOUCH DEVICES ===== */
+@media (hover: none) and (pointer: coarse) {
+    .tab-headers button {
+        min-height: 44px;
+        -webkit-tap-highlight-color: transparent;
+    }
+
+    .tab-headers button:hover {
+        color: #666;
+        background-color: transparent;
+    }
+
+    .tab-headers button.active:hover {
+        color: #A93226;
+        background-color: #FFFFFF;
+    }
+
+    .specs-table tbody tr:hover {
+        background-color: inherit;
+    }
+}
+
+/* ===== VERY SMALL SCREENS (320px) ===== */
+@media (max-width: 320px) {
+    .product-tabs {
+        margin: 18px 0;
+        border-radius: 7px;
+    }
+
+    .tab-headers button {
+        padding: 11px 12px;
+        font-size: 11px;
+    }
+
+    .tab-content {
+        padding: 14px 10px;
+        min-height: 180px;
+    }
+
+    .content-inner {
+        font-size: 12px;
+    }
+
+    .usage-tab ol {
+        padding-left: 18px;
+    }
+
+    .usage-tab ol li {
+        margin: 12px 0;
+        font-size: 12px;
+        padding-left: 10px;
+    }
+
+    .usage-tab ol li::before {
+        width: 22px;
+        height: 22px;
+        font-size: 10px;
+        left: -18px;
+    }
+
+    .specs-table tbody tr {
+        padding: 8px 0;
+    }
+
+    .specs-table td {
+        padding: 4px 10px !important;
+        font-size: 11px;
+    }
+}
+
+/* ===== SCROLLBAR STYLING MOBILE ===== */
+@media (max-width: 640px) {
+    .tab-headers {
+        scrollbar-width: thin;
+        scrollbar-color: #E67E22 #f5f5f5;
+    }
+
+    .tab-headers::-webkit-scrollbar {
+        height: 3px;
+    }
+
+    .tab-headers::-webkit-scrollbar-track {
+        background: #f5f5f5;
+        border-radius: 2px;
+    }
+
+    .tab-headers::-webkit-scrollbar-thumb {
+        background: #E67E22;
+        border-radius: 2px;
+    }
+
+    .tab-headers::-webkit-scrollbar-thumb:hover {
+        background: #d67118;
+    }
+}
+
+/* ===== FOCUS IMPROVEMENT MOBILE ===== */
+@media (max-width: 640px) {
+    .tab-headers button:focus {
+        outline: 2px solid #E67E22;
+        outline-offset: -1px;
+    }
+
+    .tab-headers button:focus:not(:focus-visible) {
+        outline: none;
+    }
+}
+
+/* ===== SMOOTH TRANSITIONS MOBILE ===== */
+@media (max-width: 640px) {
+    .tab-headers button,
+    .content-inner,
+    .specs-table tbody tr {
+        transition: all 0.25s ease;
+    }
+}
+
+/* ===== PRINT STYLES MOBILE ===== */
+@media print and (max-width: 640px) {
+    .product-tabs {
+        margin: 16px 0;
+    }
+
+    .tab-content {
+        padding: 12px;
+    }
+
+    .usage-tab ol li {
+        font-size: 11px;
+    }
+
+    .specs-table td {
+        padding: 8px 10px !important;
+        font-size: 11px;
+    }
+}

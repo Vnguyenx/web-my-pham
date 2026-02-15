@@ -246,3 +246,104 @@
     font-weight: 600;
     margin-left: 12px;
 }
+/* --- Responsive cho Giỏ hàng --- */
+/* ============================================= */
+/* ===== RESPONSIVE SYSTEM FOR CART ITEM ===== */
+/* ============================================= */
+
+/* ===== TABLET (≤1024px) ===== */
+@media (max-width: 1024px) {
+
+    .product-cell img {
+        width: 60px;
+        height: 60px;
+    }
+
+    .qty-actions button {
+        width: 28px;
+        height: 28px;
+    }
+}
+
+/* ===== MOBILE TABLE SCROLL (≤768px) ===== */
+@media (max-width: 768px) {
+
+    .cart-table {
+        min-width: 600px;
+    }
+
+    .product-cell img {
+        width: 50px;
+        height: 50px;
+    }
+
+    .product-cell p {
+        font-size: 13px;
+    }
+
+    .total-cell {
+        font-size: 14px;
+    }
+
+    .qty-actions button {
+        width: 26px;
+        height: 26px;
+        font-size: 14px;
+    }
+}
+
+/* ===== MOBILE CARD LAYOUT (≤640px) ===== */
+@media (max-width: 640px) {
+
+    .cart-table thead {
+        display: none;
+    }
+
+    .cart-table,
+    .cart-table tbody,
+    .cart-table tr,
+    .cart-table td {
+        display: block;
+        width: 100%;
+    }
+
+    .cart-table tr {
+        position: relative;
+        margin-bottom: 16px;
+        border: 1px solid #F5E1DA;
+        border-radius: 12px;
+        padding: 14px;
+        background: #FFFFFF;
+    }
+
+    .cart-table td {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 8px 0;
+        border: none;
+    }
+
+    .cart-table td::before {
+        content: attr(data-label);
+        font-weight: 600;
+        font-size: 12px;
+        color: #666;
+        text-transform: uppercase;
+    }
+
+    .btn-delete {
+        position: absolute;
+        top: 12px;
+        right: 12px;
+    }
+}
+
+/* ===== TOUCH OPTIMIZATION ===== */
+@media (hover: none) and (pointer: coarse) {
+
+    .qty-actions button {
+        min-width: 32px;
+        min-height: 32px;
+    }
+}

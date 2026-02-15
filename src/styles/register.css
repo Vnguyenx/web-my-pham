@@ -346,3 +346,578 @@
         height: 28px;
     }
 }
+
+/* ============================================= */
+/* ===== THÊM MỚI: RESPONSIVE CHO AUTH PAGE ===== */
+/* ============================================= */
+/* Copy và paste phần này vào cuối file register/auth CSS */
+
+/* ===== RESPONSIVE: LAPTOP/TABLET LỚN ===== */
+@media (max-width: 1024px) {
+    .auth-wrapper {
+        padding: 36px 18px;
+    }
+
+    .auth-wrapper::before,
+    .auth-wrapper::after {
+        opacity: 0.7;
+    }
+
+    .back-home {
+        top: 28px;
+        left: 40px;
+        font-size: 14.5px;
+        padding: 11px 18px;
+    }
+
+    .auth-container {
+        padding: 44px 36px;
+        max-width: 460px;
+        border-radius: 22px;
+    }
+
+    .auth-container h2 {
+        font-size: 26px;
+        margin-bottom: 30px;
+    }
+
+    .auth-container input {
+        padding: 13px 19px;
+        font-size: 14.5px;
+        margin-bottom: 17px;
+    }
+
+    .password-wrapper {
+        margin-bottom: 17px;
+    }
+
+    .auth-container button[type="submit"] {
+        padding: 13px 22px;
+        font-size: 15.5px;
+    }
+
+    .switch-auth {
+        font-size: 13.5px;
+        margin-top: 22px;
+    }
+}
+
+/* ===== RESPONSIVE: TABLET ===== */
+@media (max-width: 820px) {
+    .auth-wrapper {
+        padding: 32px 16px;
+    }
+
+    .auth-wrapper::before {
+        width: 500px;
+        height: 500px;
+        top: -40%;
+        right: -15%;
+    }
+
+    .auth-wrapper::after {
+        width: 450px;
+        height: 450px;
+        bottom: -25%;
+        left: -8%;
+    }
+
+    .back-home {
+        top: 24px;
+        left: 32px;
+        font-size: 14px;
+        padding: 10px 18px;
+    }
+
+    .auth-container {
+        padding: 40px 32px;
+        max-width: 440px;
+        border-radius: 20px;
+    }
+
+    .auth-container h2 {
+        font-size: 25px;
+        margin-bottom: 28px;
+    }
+
+    .auth-container .error {
+        padding: 11px 15px;
+        font-size: 13.5px;
+        margin-bottom: 18px;
+    }
+
+    .auth-container input {
+        padding: 13px 18px;
+        font-size: 14px;
+        margin-bottom: 16px;
+        border-radius: 11px;
+    }
+
+    .password-wrapper {
+        margin-bottom: 16px;
+    }
+
+    .toggle-password {
+        right: 14px;
+        font-size: 19px;
+        width: 30px;
+        height: 30px;
+    }
+
+    .auth-container button[type="submit"] {
+        padding: 13px 22px;
+        font-size: 15px;
+    }
+
+    .switch-auth {
+        margin-top: 20px;
+        font-size: 13px;
+    }
+}
+
+/* ===== RESPONSIVE: MOBILE LỚN ===== */
+@media (max-width: 640px) {
+    .auth-wrapper {
+        padding: 28px 16px;
+        background: linear-gradient(135deg, #fff 0%, var(--primary) 60%, #fff 100%);
+    }
+
+    .auth-wrapper::before,
+    .auth-wrapper::after {
+        display: none; /* Ẩn decorative elements để tránh rối */
+    }
+
+    .back-home {
+        top: 20px;
+        left: 20px;
+        font-size: 13px;
+        padding: 10px 16px;
+        border-radius: 20px;
+    }
+
+    .auth-container {
+        padding: 36px 28px;
+        max-width: 100%;
+        border-radius: 18px;
+        box-shadow: 0 12px 36px rgba(176, 58, 46, 0.12);
+    }
+
+    .auth-container::before {
+        height: 5px;
+    }
+
+    .auth-container h2 {
+        font-size: 24px;
+        margin-bottom: 28px;
+    }
+
+    .auth-container .error {
+        padding: 10px 14px;
+        font-size: 13px;
+        margin-bottom: 16px;
+        border-radius: 10px;
+    }
+
+    .auth-container input {
+        width: 92%;
+        padding: 12px 18px;
+        font-size: 14px;
+        margin-bottom: 16px;
+        border-radius: 10px;
+    }
+
+    .password-wrapper {
+        margin-bottom: 16px;
+    }
+
+    .toggle-password {
+        right: 14px;
+        font-size: 18px;
+        width: 30px;
+        height: 30px;
+    }
+
+    .auth-container button[type="submit"] {
+        padding: 12px 20px;
+        font-size: 15px;
+        border-radius: 10px;
+    }
+
+    .switch-auth {
+        margin-top: 20px;
+        font-size: 13px;
+    }
+}
+
+/* ===== RESPONSIVE: MOBILE TRUNG BÌNH ===== */
+@media (max-width: 480px) {
+    .auth-wrapper {
+        padding: 20px 14px;
+        min-height: 100vh;
+        display: block;
+    }
+
+    .back-home {
+        position: static;
+        margin-bottom: 20px;
+        display: inline-block;
+        font-size: 12px;
+        padding: 9px 14px;
+        border-radius: 18px;
+    }
+
+    .auth-container {
+        padding: 32px 24px;
+        border-radius: 16px;
+        border-width: 1.5px;
+        box-shadow: 0 8px 28px rgba(176, 58, 46, 0.1);
+    }
+
+    .auth-container::before {
+        height: 4px;
+    }
+
+    .auth-container h2 {
+        font-size: 22px;
+        margin-bottom: 24px;
+    }
+
+    .auth-container .error {
+        padding: 10px 13px;
+        font-size: 12px;
+        margin-bottom: 14px;
+        border-radius: 9px;
+        border-left-width: 3px;
+    }
+
+    .auth-container input {
+        width: 94%;
+        padding: 11px 16px;
+        font-size: 13px;
+        margin-bottom: 14px;
+        border-radius: 9px;
+        border-width: 1.5px;
+    }
+
+    .auth-container input::placeholder {
+        font-size: 12px;
+    }
+
+    .password-wrapper {
+        margin-bottom: 14px;
+    }
+
+    .toggle-password {
+        right: 12px;
+        font-size: 17px;
+        width: 28px;
+        height: 28px;
+        border-radius: 7px;
+    }
+
+    .toggle-password:hover {
+        transform: translateY(-50%) scale(1.05);
+    }
+
+    .auth-container button[type="submit"] {
+        padding: 12px 18px;
+        font-size: 14px;
+        border-radius: 9px;
+        margin-top: 6px;
+    }
+
+    .switch-auth {
+        margin-top: 18px;
+        font-size: 12px;
+    }
+
+    .switch-auth a {
+        display: inline-block;
+        padding: 2px 0;
+    }
+}
+
+/* ===== RESPONSIVE: MOBILE NHỎ (iPhone SE) ===== */
+@media (max-width: 375px) {
+    .auth-wrapper {
+        padding: 16px 12px;
+    }
+
+    .back-home {
+        margin-bottom: 16px;
+        font-size: 11px;
+        padding: 8px 12px;
+        border-radius: 16px;
+    }
+
+    .auth-container {
+        padding: 28px 20px;
+        border-radius: 14px;
+        box-shadow: 0 6px 24px rgba(176, 58, 46, 0.08);
+    }
+
+    .auth-container::before {
+        height: 4px;
+        border-radius: 14px 14px 0 0;
+    }
+
+    .auth-container h2 {
+        font-size: 20px;
+        margin-bottom: 22px;
+    }
+
+    .auth-container .error {
+        padding: 9px 12px;
+        font-size: 11px;
+        margin-bottom: 12px;
+        border-radius: 8px;
+        border-left-width: 3px;
+    }
+
+    .auth-container input {
+        width: 95%;
+        padding: 10px 14px;
+        font-size: 12px;
+        margin-bottom: 12px;
+        border-radius: 8px;
+    }
+
+    .auth-container input::placeholder {
+        font-size: 11px;
+    }
+
+    .password-wrapper {
+        margin-bottom: 12px;
+    }
+
+    .toggle-password {
+        right: 10px;
+        font-size: 16px;
+        width: 26px;
+        height: 26px;
+        border-radius: 6px;
+    }
+
+    .auth-container button[type="submit"] {
+        padding: 11px 16px;
+        font-size: 13px;
+        border-radius: 8px;
+        margin-top: 4px;
+        box-shadow: 0 3px 10px rgba(176, 58, 46, 0.25);
+    }
+
+    .auth-container button[type="submit"]:hover {
+        box-shadow: 0 4px 16px rgba(176, 58, 46, 0.35);
+    }
+
+    .switch-auth {
+        margin-top: 16px;
+        font-size: 11px;
+    }
+
+    .switch-auth a::after {
+        height: 1.5px;
+    }
+
+    /* Giảm animation cho mobile nhỏ */
+    @keyframes float {
+        0%, 100% { transform: translate(0, 0) scale(1); }
+        50% { transform: translate(10px, -10px) scale(1.03); }
+    }
+
+    @keyframes shake {
+        0%, 100% { transform: translateX(0); }
+        25% { transform: translateX(-5px); }
+        75% { transform: translateX(5px); }
+    }
+}
+
+/* ===== RESPONSIVE: LANDSCAPE MOBILE ===== */
+@media (max-width: 820px) and (orientation: landscape) {
+    .auth-wrapper {
+        padding: 20px 16px;
+        min-height: 100vh;
+    }
+
+    .back-home {
+        top: 16px;
+        left: 16px;
+        font-size: 12px;
+        padding: 8px 14px;
+    }
+
+    .auth-container {
+        padding: 28px 32px;
+        max-width: 500px;
+        margin: auto;
+    }
+
+    .auth-container h2 {
+        font-size: 22px;
+        margin-bottom: 20px;
+    }
+
+    .auth-container input {
+        padding: 10px 16px;
+        font-size: 13px;
+        margin-bottom: 12px;
+    }
+
+    .password-wrapper {
+        margin-bottom: 12px;
+    }
+
+    .auth-container button[type="submit"] {
+        padding: 11px 20px;
+        font-size: 14px;
+    }
+
+    .switch-auth {
+        margin-top: 16px;
+        font-size: 12px;
+    }
+}
+
+/* ===== TỐI ƯU CHO TOUCH DEVICES ===== */
+@media (hover: none) and (pointer: coarse) {
+    /* Tăng vùng chạm */
+    .auth-container input {
+        min-height: 44px;
+        font-size: 16px; /* Prevent zoom on iOS */
+    }
+
+    .auth-container button[type="submit"] {
+        min-height: 48px;
+    }
+
+    .toggle-password {
+        min-width: 44px;
+        min-height: 44px;
+        right: 8px;
+    }
+
+    .back-home {
+        min-height: 44px;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    /* Bỏ hover effects phức tạp */
+    .auth-container input:hover {
+        border-color: var(--primary);
+        transform: none;
+    }
+
+    .auth-container input:focus {
+        transform: none;
+    }
+
+    .toggle-password:hover {
+        transform: translateY(-50%);
+        background: transparent;
+    }
+
+    .auth-container button[type="submit"]:hover {
+        transform: none;
+    }
+
+    .back-home:hover {
+        transform: none;
+    }
+
+    .switch-auth a:hover {
+        transform: none;
+    }
+}
+
+/* ===== TỐI ƯU KHI BÀN PHÍM ẨN HIỆN (iOS) ===== */
+@media (max-width: 640px) {
+    /* Prevent layout shift khi keyboard xuất hiện */
+    .auth-container input:focus {
+        scroll-margin-top: 100px;
+    }
+
+    /* Scroll to input khi focus */
+    .auth-wrapper {
+        scroll-behavior: smooth;
+    }
+}
+
+/* ===== VERY SMALL SCREENS (Galaxy Fold, etc) ===== */
+@media (max-width: 320px) {
+    .auth-wrapper {
+        padding: 12px 10px;
+    }
+
+    .back-home {
+        margin-bottom: 12px;
+        font-size: 10px;
+        padding: 7px 10px;
+    }
+
+    .auth-container {
+        padding: 24px 16px;
+        border-radius: 12px;
+    }
+
+    .auth-container h2 {
+        font-size: 18px;
+        margin-bottom: 18px;
+    }
+
+    .auth-container .error {
+        padding: 8px 10px;
+        font-size: 10px;
+        margin-bottom: 10px;
+    }
+
+    .auth-container input {
+        padding: 9px 12px;
+        font-size: 11px;
+        margin-bottom: 10px;
+        border-radius: 7px;
+    }
+
+    .password-wrapper {
+        margin-bottom: 10px;
+    }
+
+    .toggle-password {
+        font-size: 15px;
+        width: 24px;
+        height: 24px;
+    }
+
+    .auth-container button[type="submit"] {
+        padding: 10px 14px;
+        font-size: 12px;
+        border-radius: 7px;
+    }
+
+    .switch-auth {
+        margin-top: 14px;
+        font-size: 10px;
+    }
+}
+
+/* ===== PRINT STYLES ===== */
+@media print {
+    .auth-wrapper::before,
+    .auth-wrapper::after {
+        display: none;
+    }
+
+    .back-home {
+        display: none;
+    }
+
+    .auth-container {
+        box-shadow: none;
+        border: 1px solid #ddd;
+    }
+
+    .auth-container button[type="submit"] {
+        display: none;
+    }
+}

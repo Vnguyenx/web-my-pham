@@ -165,3 +165,81 @@
         font-size: 15px;
     }
 }
+/* ============================================= */
+/* ===== RESPONSIVE SYSTEM FOR CART SUMMARY ===== */
+/* ============================================= */
+
+/* ===== TABLET (≤1024px) ===== */
+@media (max-width: 1024px) {
+
+    .cart-summary {
+        padding: 20px;
+    }
+
+    .cart-summary h3 {
+        font-size: 18px;
+    }
+
+    .price-final {
+        font-size: 20px;
+    }
+}
+
+/* ===== MOBILE (≤768px) ===== */
+@media (max-width: 768px) {
+
+    .cart-summary {
+        border-radius: 12px;
+        padding: 18px;
+    }
+
+    .summary-line {
+        font-size: 14px;
+    }
+
+    .summary-total {
+        font-size: 16px;
+    }
+
+    .btn-checkout {
+        padding: 14px;
+        font-size: 15px;
+    }
+}
+
+/* ===== SMALL MOBILE (≤480px) ===== */
+@media (max-width: 480px) {
+
+    .cart-summary {
+        padding: 15px;
+        border-left: none;
+        border-right: none;
+        border-radius: 0;
+    }
+
+    .promo-code {
+        flex-direction: column;
+    }
+
+    .promo-code button {
+        width: 100%;
+    }
+
+    .price-final {
+        font-size: 18px;
+    }
+
+    .btn-checkout {
+        padding: 16px;
+        font-size: 14px;
+    }
+}
+
+/* ===== TOUCH OPTIMIZATION ===== */
+@media (hover: none) and (pointer: coarse) {
+
+    .btn-checkout,
+    .btn-continue {
+        min-height: 44px;
+    }
+}

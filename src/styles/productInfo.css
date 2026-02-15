@@ -482,3 +482,322 @@
     0% { transform: rotate(0deg); }
     100% { transform: rotate(360deg); }
 }
+/* ============================================= */
+/* ===== RESPONSIVE CHO PRODUCT INFO ===== */
+/* ============================================= */
+/* Copy và paste phần này vào cuối file CSS */
+
+/* ===== LAPTOP NHỎ / TABLET LỚN (1200px) ===== */
+@media (max-width: 1200px) {
+    .product-info-container {
+        gap: 30px;
+        padding: 25px;
+    }
+
+    .product-title {
+        font-size: 26px;
+    }
+
+    .current-price {
+        font-size: 30px;
+    }
+
+    .product-price-block {
+        padding: 18px;
+    }
+}
+
+/* ===== TABLET LỚN (1024px) ===== */
+@media (max-width: 1024px) {
+    .product-info-container {
+        gap: 28px;
+        padding: 22px;
+    }
+
+    .main-image {
+        border-radius: 10px;
+    }
+
+    .product-title {
+        font-size: 24px;
+    }
+
+    .current-price {
+        font-size: 28px;
+    }
+
+    .old-price {
+        font-size: 16px;
+    }
+
+    .btn-add-cart,
+    .btn-buy-now {
+        height: 50px;
+        font-size: 15px;
+    }
+}
+
+/* ===== TABLET (820px) ===== */
+@media (max-width: 820px) {
+    .product-info-container {
+        grid-template-columns: 1fr;
+        gap: 25px;
+    }
+
+    .product-gallery {
+        order: 1;
+    }
+
+    .product-main-details {
+        order: 2;
+    }
+
+    .product-title {
+        font-size: 22px;
+    }
+
+    .product-price-block {
+        flex-wrap: wrap;
+        gap: 10px;
+    }
+
+    .button-group {
+        flex-direction: column;
+    }
+}
+
+/* ===== MOBILE LỚN (640px) ===== */
+@media (max-width: 640px) {
+    .product-info-container {
+        padding: 18px;
+        gap: 20px;
+    }
+
+    .product-brand {
+        font-size: 13px;
+    }
+
+    .product-title {
+        font-size: 20px;
+        line-height: 1.4;
+    }
+
+    .product-meta-row {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 6px;
+    }
+
+    .current-price {
+        font-size: 24px;
+    }
+
+    .old-price {
+        font-size: 15px;
+    }
+
+    .discount-tag {
+        font-size: 12px;
+        padding: 3px 10px;
+    }
+
+    .product-description-brief {
+        padding: 14px;
+    }
+
+    .quantity-selector {
+        height: 45px;
+    }
+
+    .btn-add-cart,
+    .btn-buy-now {
+        height: 46px;
+        font-size: 14px;
+    }
+}
+
+/* ===== MOBILE TRUNG BÌNH (480px) ===== */
+@media (max-width: 480px) {
+    .product-info-container {
+        padding: 15px;
+        gap: 18px;
+        border-radius: 10px;
+    }
+
+    .main-image {
+        border-radius: 8px;
+    }
+
+    .product-brand {
+        font-size: 12px;
+    }
+
+    .product-title {
+        font-size: 18px;
+    }
+
+    .product-price-block {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 14px;
+        gap: 8px;
+    }
+
+    .current-price {
+        font-size: 22px;
+    }
+
+    .old-price {
+        font-size: 14px;
+    }
+
+    .product-description-brief h4 {
+        font-size: 14px;
+    }
+
+    .product-description-brief p,
+    .benefits-list li {
+        font-size: 13px;
+    }
+
+    .quantity-selector {
+        width: 100%;
+    }
+
+    .quantity-selector button {
+        width: 40px;
+    }
+
+    .quantity-selector input {
+        width: 60px;
+        font-size: 15px;
+    }
+
+    .btn-add-cart,
+    .btn-buy-now {
+        height: 44px;
+        font-size: 14px;
+    }
+}
+
+/* ===== MOBILE NHỎ (375px) ===== */
+@media (max-width: 375px) {
+    .product-title {
+        font-size: 17px;
+    }
+
+    .current-price {
+        font-size: 20px;
+    }
+
+    .old-price {
+        font-size: 13px;
+    }
+
+    .product-description-brief {
+        padding: 12px;
+    }
+
+    .quantity-selector {
+        height: 42px;
+    }
+
+    .btn-add-cart,
+    .btn-buy-now {
+        height: 42px;
+        font-size: 13.5px;
+    }
+}
+
+/* ===== VERY SMALL (320px) ===== */
+@media (max-width: 320px) {
+    .product-info-container {
+        padding: 12px;
+    }
+
+    .product-title {
+        font-size: 16px;
+    }
+
+    .current-price {
+        font-size: 18px;
+    }
+
+    .discount-tag {
+        font-size: 11px;
+        padding: 2px 8px;
+    }
+
+    .quantity-selector input {
+        width: 50px;
+        font-size: 14px;
+    }
+
+    .btn-add-cart,
+    .btn-buy-now {
+        height: 40px;
+        font-size: 13px;
+    }
+}
+
+/* ===== LANDSCAPE MOBILE ===== */
+@media (max-width: 820px) and (orientation: landscape) {
+    .product-info-container {
+        gap: 18px;
+    }
+
+    .product-title {
+        font-size: 18px;
+    }
+
+    .current-price {
+        font-size: 22px;
+    }
+}
+
+/* ===== TỐI ƯU CHO TOUCH DEVICES ===== */
+@media (hover: none) and (pointer: coarse) {
+    .btn-add-cart,
+    .btn-buy-now,
+    .quantity-selector button {
+        min-height: 44px;
+    }
+
+    .btn-add-cart:hover,
+    .btn-buy-now:hover {
+        transform: none;
+    }
+
+    .main-image:hover img {
+        transform: none;
+    }
+}
+
+/* ===== GIẢM ANIMATION CHO MOBILE ===== */
+@media (max-width: 640px) {
+    .product-info-container {
+        animation: none;
+    }
+
+    .btn-add-cart,
+    .btn-buy-now,
+    .main-image img {
+        transition: background 0.2s ease;
+    }
+}
+
+/* ===== REDUCE MOTION ===== */
+@media (prefers-reduced-motion: reduce) {
+    .product-info-container {
+        animation: none;
+    }
+
+    .btn-add-cart,
+    .btn-buy-now,
+    .main-image img,
+    .spinner-mini {
+        transition: none;
+        animation: none;
+    }
+}
+
