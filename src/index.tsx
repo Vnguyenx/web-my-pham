@@ -5,6 +5,7 @@ import { Provider } from "react-redux";
 import { store } from "./app/store";
 import App from "./App";
 import "./styles/layout.css";
+import './styles/mobile-global-fix.css';
 
 const root = ReactDOM.createRoot(
     document.getElementById("root") as HTMLElement

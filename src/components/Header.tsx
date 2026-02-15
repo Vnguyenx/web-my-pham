@@ -68,7 +68,7 @@ const Header = () => {
             {/* ===== TOP ===== */}
             <div className="header-top">
                 <div className="logo">
-                    <Link to="/">BeautyGlow</Link>
+                    <Link to="/">BG</Link>
                 </div>
 
                 <div className="search-wrapper" onMouseLeave={() => setShowPreview(false)}>
