@@ -9,7 +9,7 @@ interface Props {
 }
 
 const PaymentModal = ({ totalAmount, orderId, onConfirm, onClose }: Props) => {
-    // API tạo mã QR giả lập từ VietQR (Rất xịn để làm đồ án)
+    // API tạo mã QR giả lập từ VietQR
     const qrUrl = `https://img.vietqr.io/image/bidv-6150729528-compact2.jpg?amount=${totalAmount}&addInfo=${orderId}`;
 
     return (
