@@ -189,7 +189,6 @@ const renderContent = (key: string) => {
                     <h4>1. Phí vận chuyển</h4>
                     <p>
                         - Miễn phí vận chuyển cho đơn hàng từ 700.000đ trở lên.<br />
-                        - Đơn hàng dưới 700.000đ áp dụng phí ship đồng giá 30.000đ toàn quốc.
                     </p>
 
                     <h4>2. Đơn vị vận chuyển</h4>
