@@ -39,7 +39,7 @@ const ProductReviews = ({ productId }: Props) => {
         data: productCommentsRaw,
         itemsPerPage: 3, // Hiển thị 3 bình luận mỗi trang
         useUrlParams: false,
-        reverse: false
+        reverse: true
     });
 
     if (loading && items.length === 0) return <div className="loading">Đang tải...</div>;
