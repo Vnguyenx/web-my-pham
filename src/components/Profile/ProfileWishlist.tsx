@@ -3,9 +3,12 @@ import { useAppSelector } from "../../app/hooks";
 import WishlistItem from "./WishlistItem";
 import "../../styles/profileWishlist.css";
 import { usePagination} from "../../hooks/usePagination_Reverse"
+import {useNavigate} from "react-router-dom";
 
 
 const ProfileWishlist = () => {
+
+    const navigate = useNavigate();
     // 1. Lấy dữ liệu từ Redux Store
     const { items, loading } = useAppSelector((state) => state.wishlist);
 
@@ -37,7 +40,9 @@ const ProfileWishlist = () => {
                 <div className="empty-content">
                     <span className="empty-icon">💔</span>
                     <p>Danh sách yêu thích của bạn đang trống.</p>
-                    <button className="btn-explore">Khám phá sản phẩm ngay</button>
+                    <button className="btn-explore" onClick={() => navigate('/products')}>
+                        Khám phá sản phẩm ngay
+                    </button>
                 </div>
             </div>
         );

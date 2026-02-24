@@ -2,7 +2,8 @@ import { useMemo, useState } from "react";
 import { usePagination } from "../../hooks/usePagination_Reverse";
 import OrderTabs from "./OrderTabs";
 import OrderCard from "./OrderCard";
-import { useAppSelector } from "../../app/hooks"; //
+import { useAppSelector } from "../../app/hooks";
+import {useNavigate} from "react-router-dom";
 
 interface Props {
     userId: number;
@@ -13,6 +14,7 @@ const ProfileOrders = ({ userId }: Props) => {
     // 'orders' là tên reducer đã khai báo trong store.ts
     const { items: orders, loading } = useAppSelector((state) => state.orders); //
     const [activeTab, setActiveTab] = useState("all");
+    const navigate = useNavigate();
 
     // 2. Logic Lọc theo Tab (All, Pending, Shipping, v.v.)
     const filteredOrders = useMemo(() => {
@@ -39,12 +41,63 @@ const ProfileOrders = ({ userId }: Props) => {
 
     if (orders.length === 0) {
         return (
-            <div className="empty-state">
-                <div className="icon">📦</div>
-                <h3>Bạn chưa có đơn hàng nào</h3>
-                <p>Hãy khám phá các sản phẩm tuyệt vời của chúng tôi nhé!</p>
-                <button className="btn-shop-now">Mua sắm ngay</button>
-            </div>
+            <>
+                <style>{`
+                .empty-state {
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    justify-content: center;
+                    padding: 60px 20px;
+                    background-color: #FFFFFF;
+                    border-radius: 12px;
+                    text-align: center;
+                }
+
+                .empty-state .icon {
+                    font-size: 64px;
+                    margin-bottom: 16px;
+                }
+
+                .empty-state h3 {
+                    font-size: 22px;
+                    color: #333333;
+                    margin-bottom: 10px;
+                    font-weight: 600;
+                }
+
+                .empty-state p {
+                    font-size: 15px;
+                    color: #888888;
+                    margin-bottom: 24px;
+                }
+
+                .btn-shop-now {
+                    background-color: #E67E22;
+                    color: #FFFFFF;
+                    border: none;
+                    padding: 12px 32px;
+                    border-radius: 8px;
+                    font-size: 15px;
+                    font-weight: 600;
+                    cursor: pointer;
+                    transition: background-color 0.2s ease;
+                }
+
+                .btn-shop-now:hover {
+                    background-color: #A93226;
+                }
+            `}</style>
+
+                <div className="empty-state">
+                    <div className="icon">📦</div>
+                    <h3>Bạn chưa có đơn hàng nào</h3>
+                    <p>Hãy khám phá các sản phẩm tuyệt vời của chúng tôi nhé!</p>
+                    <button className="btn-shop-now" onClick={() => navigate('/products')}>
+                        Mua sắm ngay
+                    </button>
+                </div>
+            </>
         );
     }
 
